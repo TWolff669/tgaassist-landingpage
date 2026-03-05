@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /blog/*.json
+
+Sitemap: https://tgaassist.app/sitemap.xml
