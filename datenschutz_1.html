@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Datenschutzerklärung - TGAassist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#060D1A;--ink2:#0C1628;--blue:#3B82F6;--blue2:#60A5FA;--cyan:#22D3EE;--slate:#64748B;--muted:#94A3B8;--line:rgba(255,255,255,0.07);--white:#FFFFFF;--card:rgba(255,255,255,0.035)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;cursor:none;line-height:1.7}
+.cursor{position:fixed;width:10px;height:10px;background:var(--blue);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;opacity:0}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(96,165,250,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:0}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,13,26,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.nav-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--white);letter-spacing:-.02em;display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 12px var(--blue);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 8px var(--blue)}50%{box-shadow:0 0 20px var(--blue)}}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--blue);color:white;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;box-shadow:0 4px 16px rgba(59,130,246,.35)}
+.nav-cta:hover{background:#2563EB;color:white}
+.page-header{padding:160px 40px 80px;text-align:center;background:linear-gradient(180deg,var(--ink2) 0%,var(--ink) 100%);border-bottom:1px solid var(--line)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:16px}
+.page-title{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;margin-bottom:16px}
+.page-sub{font-size:15px;color:var(--muted);max-width:500px;margin:0 auto}
+.content{max-width:780px;margin:0 auto;padding:80px 40px 120px}
+.content h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin:48px 0 16px;color:var(--white);padding-top:8px}
+.content h2:first-child{margin-top:0}
+.content h3{font-size:15px;font-weight:600;margin:24px 0 8px;color:var(--blue2)}
+.content p{font-size:14px;color:var(--muted);margin-bottom:14px;line-height:1.8}
+.content a{color:var(--blue2);text-decoration:none}
+.content a:hover{text-decoration:underline}
+.content ul{margin:8px 0 16px 20px;color:var(--muted);font-size:14px;line-height:1.8}
+.info-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px 28px;margin:20px 0 28px}
+.info-box p{margin:0;font-size:14px;color:var(--muted);line-height:1.8}
+.info-box strong{color:var(--white)}
+hr{border:none;border-top:1px solid var(--line);margin:40px 0}
+footer{background:var(--ink2);border-top:1px solid var(--line);padding:40px;text-align:center}
+.footer-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--white);margin-bottom:16px}
+.footer-links{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:20px}
+.footer-links a{font-size:13px;color:var(--slate);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{font-size:12px;color:var(--slate)}
+@media(max-width:768px){nav{padding:16px 20px}.nav-links{display:none}.page-header{padding:120px 20px 60px}.content{padding:60px 20px 80px}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo"><div class="logo-dot"></div>TGAassist</a>
+  <div class="nav-links">
+    <a href="index.html#tools">Werkzeuge</a>
+    <a href="index.html#preise">Preise</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="blog.html">Blog</a>
+  </div>
+  <a href="index.html#preise" class="nav-cta">Jetzt starten &rarr;</a>
+</nav>
+
+<div class="page-header">
+  <div class="eyebrow">Datenschutz</div>
+  <h1 class="page-title">Datenschutzerklärung</h1>
+  <p class="page-sub">Informationen zur Verarbeitung personenbezogener Daten</p>
+</div>
+
+<div class="content">
+
+<p style="color:var(--slate);font-size:13px">Stand: M&auml;rz 2026</p>
+<h2>1. Verantwortlicher</h2>
+<div class="info-box">
+  <p><strong>Thomas Wolff</strong><br>
+  TGAassist (in Lizenz von TGA Planung Wolff)<br>
+  Sommehrofenstr. 120, 71067 Sindelfingen<br>
+  E-Mail: <a href="/cdn-cgi/l/email-protection#533c3d36132734323220203a20277d322323"><span class="__cf_email__" data-cfemail="b1dedfd4f1c5d6d0d0c2c2d8c2c59fd0c1c1">[email&#160;protected]</span></a></p>
+</div>
+<h2>2. Grunds&auml;tze</h2>
+<p>Wir verarbeiten personenbezogene Daten nur, soweit dies f&uuml;r die Bereitstellung unserer Dienste erforderlich ist oder du ausdr&uuml;cklich eingewilligt hast. Rechtsgrundlage ist Art. 6 DSGVO.</p>
+<h2>3. Hosting &amp; Infrastruktur</h2>
+<h3>Website (Netlify)</h3>
+<p>Diese Website wird &uuml;ber Netlify, Inc. (USA) gehostet. Beim Aufruf werden automatisch Verbindungsdaten (IP-Adresse, Browsertyp, Zeitpunkt) in Server-Logs gespeichert. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Netlify ist unter dem EU-US Data Privacy Framework zertifiziert; zus&auml;tzlich bestehen Standardvertragsklauseln (SCCs) gem&auml;&szlig; Art. 46 DSGVO. Diese Website enth&auml;lt keine Login-Funktion und verarbeitet keine sensiblen Nutzer- oder Planungsdaten.</p>
+<h3>App-Infrastruktur (Supabase / Hetzner)</h3>
+<p>Die TGAassist-Anwendung l&auml;uft auf EU-Servern (Frankfurt, Hetzner). Deine Projektdaten verlassen die EU nicht.</p>
+<h2>4. Cookies &amp; Tracking</h2>
+<p>Diese Website verwendet <strong>ausschlie&szlig;lich technisch notwendige Cookies</strong>. Es werden keine Tracking-, Marketing- oder Analyse-Cookies eingesetzt. Ein Cookie-Banner ist daher nicht erforderlich.</p>
+<h2>5. Kontakt per E-Mail</h2>
+<p>Wenn du uns per E-Mail kontaktierst, werden die &uuml;bermittelten Daten zur Bearbeitung deiner Anfrage gespeichert. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. Die Daten werden nicht an Dritte weitergegeben.</p>
+<h2>6. App-Nutzung</h2>
+<p>Projektdaten (z. B. hochgeladene GAEB-Dateien) werden ausschlie&szlig;lich zur Erbringung der gebuchten Leistung verarbeitet, auf EU-Servern gespeichert und nicht f&uuml;r Marketingzwecke oder KI-Training verwendet.</p>
+<h2>7. KI-Verarbeitung</h2>
+<p>TGAassist nutzt KI-Dienste (u. a. Anthropic Claude API) im Rahmen einer Auftragsverarbeitungsvereinbarung. Eingaben werden nicht zum Training von KI-Modellen verwendet.</p>
+<h2>8. Deine Rechte</h2>
+<p>Du hast nach DSGVO das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), L&ouml;schung (Art. 17), Einschr&auml;nkung (Art. 18), Daten&uuml;bertragbarkeit (Art. 20) und Widerspruch (Art. 21). Kontakt: <a href="/cdn-cgi/l/email-protection#e08f8e85a0948781819393899394ce819090"><span class="__cf_email__" data-cfemail="b1dedfd4f1c5d6d0d0c2c2d8c2c59fd0c1c1">[email&#160;protected]</span></a></p>
+<h2>9. Beschwerderecht</h2>
+<p>Zust&auml;ndig f&uuml;r Baden-W&uuml;rttemberg: Landesbeauftragter f&uuml;r den Datenschutz und die Informationsfreiheit Baden-W&uuml;rttemberg &ndash; <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener">www.baden-wuerttemberg.datenschutz.de</a></p>
+
+</div>
+
+<footer>
+  <div class="footer-logo">TGAassist</div>
+  <div class="footer-links">
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="agb.html">AGB</a>
+    <a href="/cdn-cgi/l/email-protection#7b14151e3b0f1c1a1a080812080f551a0b0b">Kontakt</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 TGAassist &middot; Alle Preise netto zzgl. 19&nbsp;% MwSt.</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+var cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing'),mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';cur.style.opacity='1';ring.style.opacity='1'});
+(function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';reques
