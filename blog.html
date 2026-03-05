@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Blog – TGAassist | Wissen für TGA-Planer</title>
+  <meta name="description" content="Praxisnahe Artikel für TGA-Fachplaner: KI in der Planung, VOB/B, Wärmepumpe, GAEB und mehr. Vom Planer, für Planer."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink:    #060D1A;
+      --ink2:   #0C1628;
+      --navy:   #0F2040;
+      --blue:   #3B82F6;
+      --blue2:  #60A5FA;
+      --cyan:   #22D3EE;
+      --gold:   #F59E0B;
+      --green:  #10B981;
+      --slate:  #64748B;
+      --muted:  #94A3B8;
+      --line:   rgba(255,255,255,0.07);
+      --white:  #FFFFFF;
+      --card:   rgba(255,255,255,0.035);
+      --card-h: rgba(255,255,255,0.065);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      background:var(--ink);
+      color:var(--white);
+      overflow-x:hidden;
+      cursor:none;
+    }
+
+    /* CURSOR */
+    .cursor{position:fixed;width:10px;height:10px;background:var(--blue);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+    .cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(96,165,250,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .2s}
+
+    /* NOISE */
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.6}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:all .3s ease}
+    nav.scrolled{background:rgba(6,13,26,.9);backdrop-filter:blur(20px);padding:14px 40px;border-bottom:1px solid var(--line)}
+    .nav-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--white);letter-spacing:-.02em;display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-dot{width:8px;height:8px;background:var(--blue);border-radius:50%;box-shadow:0 0 12px var(--blue)}
+    .nav-links{display:flex;align-items:center;gap:32px}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--white)}
+    .nav-cta{font-size:13.5px;font-weight:600;color:var(--white);background:var(--blue);padding:9px 20px;border-radius:8px;text-decoration:none;transition:background .2s}
+    .nav-cta:hover{background:#2563EB}
+
+    /* HERO BLOG */
+    .blog-hero{padding:160px 40px 80px;text-align:center;position:relative;z-index:1}
+    .eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:16px}
+    .blog-hero h1{font-family:'Syne',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:20px}
+    .blog-hero h1 span{background:linear-gradient(135deg,var(--blue2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .blog-hero p{font-size:17px;color:var(--muted);max-width:560px;margin:0 auto;line-height:1.7}
+
+    /* FILTER */
+    .filter-bar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:0 40px 60px;position:relative;z-index:1}
+    .filter-btn{font-size:12.5px;font-weight:600;padding:7px 16px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer;transition:all .2s;letter-spacing:.02em}
+    .filter-btn:hover,.filter-btn.active{background:var(--blue);border-color:var(--blue);color:var(--white)}
+
+    /* GRID */
+    .blog-grid{max-width:1100px;margin:0 auto;padding:0 40px 100px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative;z-index:1}
+    .blog-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;text-decoration:none;color:var(--white);transition:all .25s;display:flex;flex-direction:column;gap:12px}
+    .blog-card:hover{background:var(--card-h);border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
+    .card-cat{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .card-cat.blue{color:var(--blue2)}
+    .card-cat.gold{color:var(--gold)}
+    .card-cat.green{color:var(--green)}
+    .card-cat.cyan{color:var(--cyan)}
+    .blog-card h2{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;line-height:1.35;letter-spacing:-.01em}
+    .blog-card p{font-size:13.5px;color:var(--muted);line-height:1.65;flex:1}
+    .card-meta{font-size:12px;color:var(--slate);margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+    .card-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(59,130,246,.15);color:var(--blue2);margin-bottom:4px}
+
+    /* COMING SOON */
+    .coming-soon{max-width:1100px;margin:0 auto 80px;padding:0 40px;position:relative;z-index:1}
+    .coming-card{background:var(--ink2);border:1px dashed rgba(255,255,255,.1);border-radius:16px;padding:40px;text-align:center}
+    .coming-card p{color:var(--muted);font-size:14px;margin-top:8px}
+
+    /* NEWSLETTER */
+    .newsletter{background:var(--ink2);border-top:1px solid var(--line);padding:80px 40px;text-align:center;position:relative;z-index:1}
+    .newsletter h2{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;margin-bottom:12px;letter-spacing:-.02em}
+    .newsletter p{color:var(--muted);font-size:15px;margin-bottom:32px}
+    .nl-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .nl-form input{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:8px;padding:12px 20px;font-size:14px;color:var(--white);outline:none;width:280px;font-family:'Plus Jakarta Sans',sans-serif}
+    .nl-form input::placeholder{color:var(--slate)}
+    .nl-form input:focus{border-color:var(--blue)}
+    .nl-form button{background:var(--blue);color:var(--white);border:none;border-radius:8px;padding:12px 24px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:background .2s}
+    .nl-form button:hover{background:#2563EB}
+
+    /* FOOTER */
+    footer{background:var(--ink);border-top:1px solid var(--line);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;position:relative;z-index:1}
+    .footer-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;letter-spacing:-.02em}
+    .footer-links{display:flex;gap:28px}
+    .footer-links a{font-size:13px;color:var(--slate);text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:var(--white)}
+    .footer-copy{font-size:12.5px;color:var(--slate)}
+
+    @media(max-width:900px){
+      .blog-grid{grid-template-columns:repeat(2,1fr)}
+      nav{padding:16px 20px}
+      .blog-hero,.filter-bar,.blog-grid,.coming-soon,.newsletter{padding-left:20px;padding-right:20px}
+    }
+    @media(max-width:600px){
+      .blog-grid{grid-template-columns:1fr}
+      .nav-links{display:none}
+      footer{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><div class="logo-dot"></div>TGAassist</a>
+  <div class="nav-links">
+    <a href="index.html#tools">Werkzeuge</a>
+    <a href="index.html#wie">Wie es funktioniert</a>
+    <a href="index.html#preise">Preise</a>
+    <a href="index.html#kontakt">Kontakt</a>
+  </div>
+  <a href="index.html#preise" class="nav-cta">Jetzt starten →</a>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="eyebrow">TGAassist Blog</div>
+  <h1>Wissen für<br><span>TGA-Planer.</span></h1>
+  <p>Praxisnah, normkonform, ohne Marketingsprache. Vom Planer, für Planer.</p>
+</section>
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <button class="filter-btn active">Alle</button>
+  <button class="filter-btn">KI & Digitalisierung</button>
+  <button class="filter-btn">VOB/B & Recht</button>
+  <button class="filter-btn">Heizung & Energie</button>
+  <button class="filter-btn">Arbeitsweise & Tools</button>
+</div>
+
+<!-- ARTIKEL GRID -->
+<div class="blog-grid">
+
+  <a href="#" class="blog-card">
+    <span class="card-cat blue">KI & Digitalisierung</span>
+    <h2>KI in der TGA-Planung — Chancen & Grenzen</h2>
+    <p>Was KI heute wirklich kann, wo die Haftungsgrenze liegt — und warum erklärbare KI entscheidend ist.</p>
+    <div class="card-meta">⏱ 5 Min Lesezeit · März 2026</div>
+  </a>
+
+  <a href="#" class="blog-card">
+    <span class="card-cat gold">VOB/B & Recht</span>
+    <h2>VOB/B Nachträge — was Planer wirklich wissen müssen</h2>
+    <p>Wann ist ein Nachtrag berechtigt? Welche Fristen gelten? Wie schützt du dich als Planer?</p>
+    <div class="card-meta">⏱ 7 Min Lesezeit · März 2026</div>
+  </a>
+
+  <a href="#" class="blog-card">
+    <span class="card-cat green">Heizung & Energie</span>
+    <h2>Wärmepumpe und hydraulischer Abgleich</h2>
+    <p>Ohne korrekten Abgleich kein effizienter Betrieb. Ein Leitfaden für Planer und Ausführende.</p>
+    <div class="card-meta">⏱ 6 Min Lesezeit · Februar 2026</div>
+  </a>
+
+  <a href="#" class="blog-card">
+    <span class="card-cat cyan">Arbeitsweise & Tools</span>
+    <h2>Plattformunabhängiges Arbeiten im Planungsbüro</h2>
+    <p>Warum browserbasierte Tools für TGA-Büros heute der bessere Weg sind — und was dabei zu beachten ist.</p>
+    <div class="card-meta">⏱ 4 Min Lesezeit · Februar 2026</div>
+  </a>
+
+  <a href="#" class="blog-card">
+    <span class="card-cat blue">KI & Digitalisierung</span>
+    <div class="card-badge">Demnächst</div>
+    <h2>GAEB DA XML — Versionen, Fallen, Kompatibilität</h2>
+    <p>DA83 vs. DA86, Version 3.2 vs. 3.3 — warum das in der Praxis immer wieder Probleme macht.</p>
+    <div class="card-meta">⏱ ca. 8 Min Lesezeit · Erscheint bald</div>
+  </a>
+
+  <a href="#" class="blog-card">
+    <span class="card-cat gold">VOB/B & Recht</span>
+    <div class="card-badge">Demnächst</div>
+    <h2>Massenermittlung nach REB — Grundlagen für die Praxis</h2>
+    <p>Was REB-Aufmaß bedeutet, welche Regeln gelten und wie digitale Tools dabei helfen können.</p>
+    <div class="card-meta">⏱ ca. 6 Min Lesezeit · Erscheint bald</div>
+  </a>
+
+</div>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <h2>Neue Artikel direkt ins Postfach.</h2>
+  <p>Kein Spam. Nur relevante Inhalte für TGA-Fachplaner — ca. 1× pro Monat.</p>
+  <div class="nl-form">
+    <input type="email" placeholder="deine@email.de"/>
+    <button type="button">Anmelden</button>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">TGAassist</div>
+  <div class="footer-links">
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="agb.html">AGB</a>
+    <a href="index.html#kontakt">Kontakt</a>
+  </div>
+  <div class="footer-copy">© 2026 TGAassist · Alle Preise netto zzgl. 19 % MwSt.</div>
+</footer>
+
+<script>
+const cur = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing)})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='52px';ring.style.height='52px';ring.style.borderColor='rgba(96,165,250,.7)'});
+  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='36px';ring.style.height='36px';ring.style.borderColor='rgba(96,165,250,.4)'});
+});
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+
+// Filter Buttons
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
