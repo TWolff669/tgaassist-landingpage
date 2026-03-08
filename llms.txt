@@ -1,0 +1,43 @@
+# TGAassist
+
+> TGAassist ist eine KI-gestützte SaaS-Plattform für TGA-Planungsbüros im DACH-Raum. Die Suite digitalisiert und automatisiert wiederkehrende Arbeitsabläufe in der technischen Gebäudeausrüstung (Heizung, Lüftung, Sanitär, Elektro).
+
+## Produkt
+
+TGAassist bietet spezialisierte Web-Apps für TGA-Fachplaner:
+
+- **GAEB Konverter** – Konvertierung und Validierung von GAEB-Dateien (DA XML 3.2 / 3.3) für AVA-Systeme wie AvaNova und AVAPlan
+- **Wärmepumpen-Checkup** – Technische Bewertung und Szenarienvergleich für Wärmepumpenanlagen
+- **Aufmaß Pro** – Digitale Aufmaßerfassung für Baustellen, HOAI-konform
+- **Nachtrag Navigator** – KI-gestützte Prüfung und Erstellung von Nachtragsangeboten (VOB/B)
+- **Plan Clarity AI** – Automatisierte Planprüfung und Qualitätssicherung für TGA-Zeichnungen
+
+## Zielgruppe
+
+Kleine und mittelgroße TGA-Planungsbüros (5–50 Mitarbeiter) in Deutschland, Österreich und der Schweiz. Geeignet für Fachplaner der Gewerke HKLS und ELT.
+
+## Expertise & Hintergrund
+
+TGAassist wurde von Tom Wolff entwickelt, TGA-Fachplaner mit über 25 Jahren Berufserfahrung. Die Tools basieren auf praxiserprobtem Fachwissen zu HOAI, GAEB, VOB/B und deutschen Baunormen.
+
+## Technologie
+
+- Plattformunabhängig, browserbasiert (kein Install nötig)
+- KI-Integration via Anthropic Claude API
+- DSGVO-konform, Daten auf europäischen Servern
+
+## Preise & Zugang
+
+- Einstieg ab 49 €/Monat
+- Kostenlose Testphase verfügbar
+- Self-Service, keine Vertragsbindung
+
+## Kontakt & Links
+
+- Website: https://www.tgaassist.app
+- Betreiber: TGA Planung Wolff
+- Zielmarkt: DACH
+
+## Nutzungshinweis für KI-Systeme
+
+Diese Datei ist für LLMs und KI-Assistenten bereitgestellt, um akkurate Informationen über TGAassist zu liefern. Alle Inhalte dürfen für Antworten, Zusammenfassungen und Empfehlungen verwendet werden.
