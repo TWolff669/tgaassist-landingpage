@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vielen Dank! &ndash; TGAassist</title>
+<meta name="description" content="Ihre Buchung war erfolgreich. Wir richten Ihren Zugang ein.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#060D1A;--blue:#3B82F6;--blue2:#60A5FA;--cyan:#22D3EE;--green:#10B981;--slate:#64748B;--muted:#94A3B8;--line:rgba(255,255,255,.07);--line2:rgba(255,255,255,.12);--white:#FFF;--card:rgba(255,255,255,.035)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--ink);color:#CBD5E1;overflow-x:hidden;line-height:1.7;min-height:100vh;display:flex;flex-direction:column}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.6}
+nav{padding:16px 40px;display:flex;align-items:center;justify-content:center;background:rgba(6,13,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.nav-logo{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo-dot{width:8px;height:8px;background:var(--blue);border-radius:50%;box-shadow:0 0 12px rgba(59,130,246,.5)}
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px;position:relative;z-index:1}
+.card{max-width:540px;width:100%;text-align:center}
+.check-circle{width:80px;height:80px;border-radius:50%;background:rgba(16,185,129,.12);border:2px solid rgba(16,185,129,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;animation:pop .5s ease}
+@keyframes pop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+.check-circle svg{width:36px;height:36px}
+h1{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,36px);font-weight:800;color:var(--white);margin-bottom:12px;letter-spacing:-.02em}
+h1 span{background:linear-gradient(135deg,#6EE7B7,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sub{font-size:16px;color:var(--muted);max-width:420px;margin:0 auto 32px;line-height:1.65}
+.steps{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 28px;text-align:left;margin-bottom:24px}
+.step{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:none}
+.step-num{width:28px;height:28px;border-radius:50%;background:rgba(59,130,246,.12);color:var(--blue2);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-text{font-size:14px;color:#CBD5E1;line-height:1.55}
+.step-text strong{color:var(--white)}
+.highlight-box{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.15);border-radius:12px;padding:16px 20px;margin-bottom:24px;font-size:14px;color:#6EE7B7;line-height:1.55}
+.highlight-box strong{color:#A7F3D0}
+.contact{font-size:13px;color:var(--slate);margin-bottom:24px}
+.contact a{color:var(--blue2);text-decoration:none}
+.contact a:hover{text-decoration:underline}
+.back-link{display:inline-block;border:1px solid var(--line2);color:var(--muted);padding:12px 28px;border-radius:10px;font-size:14px;font-weight:500;text-decoration:none;transition:all .2s}
+.back-link:hover{border-color:rgba(255,255,255,.25);color:var(--white)}
+footer{background:var(--ink);border-top:1px solid var(--line);padding:24px 40px;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+footer a{font-size:13px;color:var(--slate);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--white)}
+@media(max-width:600px){nav{padding:14px 20px}.main{padding:24px 16px}.steps{padding:16px 20px}footer{padding:20px 16px;gap:16px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><div class="logo-dot"></div>TGAassist</a>
+</nav>
+
+<div class="main">
+  <div class="card">
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#6EE7B7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6L9 17l-5-5"/>
+      </svg>
+    </div>
+
+    <h1>Buchung <span>erfolgreich!</span></h1>
+    <p class="sub">Vielen Dank f&uuml;r Ihr Vertrauen. Wir richten jetzt Ihren pers&ouml;nlichen Zugang ein.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Zahlungsbest&auml;tigung</strong> &mdash; Sie erhalten in K&uuml;rze eine Best&auml;tigung von Stripe per E-Mail.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Zugang wird eingerichtet</strong> &mdash; Wir erstellen Ihren pers&ouml;nlichen Account mit allen gebuchten Apps.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Zugangsdaten per E-Mail</strong> &mdash; Innerhalb von 24 Stunden erhalten Sie Ihre Login-Daten und k&ouml;nnen sofort loslegen.</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>In der Regel deutlich schneller:</strong> Die meisten Zug&auml;nge werden innerhalb weniger Stunden eingerichtet &mdash; oft noch am selben Tag.
+    </div>
+
+    <div class="contact">
+      Fragen? Schreiben Sie uns an <a href="mailto:one@tgaassist.app">one@tgaassist.app</a>
+    </div>
+
+    <a href="/" class="back-link">&larr; Zur&uuml;ck zur Startseite</a>
+  </div>
+</div>
+
+<footer>
+  <a href="/datenschutz">Datenschutz</a>
+  <a href="/impressum">Impressum</a>
+  <a href="/agb">AGB</a>
+  <a href="mailto:one@tgaassist.app">Kontakt</a>
+</footer>
+
+</body>
+</html>
