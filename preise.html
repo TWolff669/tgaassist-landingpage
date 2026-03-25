@@ -198,7 +198,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
         <span class="per">/Monat</span>
       </div>
       <div class="bundle-yearly yearly-info" style="opacity:0">J&auml;hrlich: 590 &euro; statt 708 &euro;</div>
-      <a href="#" class="btn-outline">Jetzt starten &rarr;</a>
+      <a href="https://buy.stripe.com/6oU6oI8GGfExePV4zF4800g" class="btn-outline link-toggle" data-href-m="https://buy.stripe.com/6oU6oI8GGfExePV4zF4800g" data-href-y="https://buy.stripe.com/aFa3cw5uu9g96jpgin4800h">14 Tage kostenlos testen &rarr;</a>
       <div class="bundle-divider"></div>
       <ul class="bundle-apps">
         <li><a href="/apps/gaeb-konverter" style="color:inherit;text-decoration:none"><strong>GAEB Konverter</strong> &mdash; PDF &rarr; GAEB</a></li>
@@ -220,7 +220,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
         <span class="per">/Monat</span>
       </div>
       <div class="bundle-yearly yearly-info" style="opacity:0">J&auml;hrlich: 1.390 &euro; statt 1.668 &euro;</div>
-      <a href="#" class="btn-primary">Jetzt starten &rarr;</a>
+      <a href="https://buy.stripe.com/14AeVef54eAtePV1nt4800j" class="btn-primary link-toggle" data-href-m="https://buy.stripe.com/14AeVef54eAtePV1nt4800j" data-href-y="https://buy.stripe.com/00waEYcWW0JD2397LR4800k">14 Tage kostenlos testen &rarr;</a>
       <div class="bundle-divider"></div>
       <ul class="bundle-apps">
         <li>Alle 3 Starter-Tools</li>
@@ -241,7 +241,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
         <span class="per">/Monat</span>
       </div>
       <div class="bundle-yearly yearly-info" style="opacity:0">J&auml;hrlich: 2.490 &euro; statt 2.988 &euro;</div>
-      <a href="#" class="btn-outline">Jetzt starten &rarr;</a>
+      <a href="https://buy.stripe.com/14A00k7CCgIBfTZeaf4800l" class="btn-outline link-toggle" data-href-m="https://buy.stripe.com/14A00k7CCgIBfTZeaf4800l" data-href-y="https://buy.stripe.com/6oUfZiaOOgIB9vBd6b4800m">14 Tage kostenlos testen &rarr;</a>
       <div class="bundle-divider"></div>
       <ul class="bundle-apps">
         <li>Alle 5 Professional-Tools</li>
@@ -388,7 +388,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
   </div>
   <div class="faq-item" onclick="toggleFaq(this)">
     <div class="faq-q">Gibt es eine Testphase? <span class="faq-arrow">+</span></div>
-    <div class="faq-a">Ja &mdash; monatlich k&uuml;ndbar, keine Bindung. Erste Zeitersparnis nach dem ersten Upload.</div>
+    <div class="faq-a">14 Tage kostenlos testen &mdash; mit Kreditkarte, aber ohne Belastung w&auml;hrend der Testphase. Danach monatlich k&uuml;ndbar, keine Bindung.</div>
   </div>
   <div class="faq-item" onclick="toggleFaq(this)">
     <div class="faq-q">Was ist die Testimonial-Partnerschaft? <span class="faq-arrow">+</span></div>
@@ -416,7 +416,6 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
   <div class="footer-copy">&copy; 2026 TGAassist &middot; Alle Preise netto zzgl. MwSt.</div>
 </footer>
 
-<script>
 let mode = 'monthly';
 
 function setMode(m) {
@@ -438,6 +437,9 @@ function setMode(m) {
   document.querySelectorAll('.yearly-info').forEach(function(el) {
     el.style.opacity = yearly ? '1' : '0';
   });
+  document.querySelectorAll('.link-toggle').forEach(function(el) {
+    el.href = yearly ? el.dataset.hrefY : el.dataset.hrefM;
+  });
 }
 
 function toggleMode() {
@@ -451,13 +453,7 @@ function toggleFaq(el) {
 }
 
 // Hide messe banner after expiry
-(function() {
-  var end = new Date('2026-05-04T23:59:59');
-  if (new Date() > end) {
-    var b = document.getElementById('messeBanner');
-    if (b) b.style.display = 'none';
-  }
-})();
+(function(){var e=new Date("2026-05-04T23:59:59");if(new Date()>e){var b=document.getElementById("messeBanner");if(b)b.style.display="none";}})();
 </script>
 
 </body>
