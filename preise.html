@@ -227,7 +227,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
         <li><a href="/apps/nachtrag-navigator" style="color:inherit;text-decoration:none"><strong>Nachtrag Navigator</strong> &mdash; VOB-KI-Pr&uuml;fung</a></li>
         <li><a href="/apps/plan-clarity" style="color:inherit;text-decoration:none"><strong>Plan Clarity AI</strong> &mdash; Doppel-Pass LV-Check</a></li>
       </ul>
-      <div class="bundle-users">1 Nutzer &middot; weitere +&euro;29/Nutzer</div>
+      <div class="bundle-users">1 Nutzer &middot; weitere +&euro;15/Nutzer <span style="font-size:11px;color:#6EE7B7">(Gr&uuml;nderaktion, reg. &euro;29)</span></div>
     </div>
 
     <!-- Office Suite -->
@@ -248,8 +248,13 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
         <li><a href="/apps/hoai-manager" style="color:inherit;text-decoration:none"><strong>HOAI-TGA-Manager</strong> &mdash; Honorar &amp; Billing</a></li>
         <li><a href="/apps/projekt-profi" style="color:inherit;text-decoration:none"><strong>Projekt Profi</strong> &mdash; HOAI LPH 1&ndash;9</a></li>
       </ul>
-      <div class="bundle-users">Bis 3 Nutzer &middot; weitere +&euro;29/Nutzer</div>
+      <div class="bundle-users">Bis 3 Nutzer &middot; weitere +&euro;15/Nutzer <span style="font-size:11px;color:#6EE7B7">(Gr&uuml;nderaktion, reg. &euro;29)</span></div>
     </div>
+  </div>
+
+  <div style="background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.15);border-radius:12px;padding:16px 20px;margin-top:20px;text-align:center">
+    <div style="font-size:14px;font-weight:600;color:#6EE7B7;margin-bottom:4px">Gr&uuml;nderaktion 2026</div>
+    <div style="font-size:13px;color:var(--muted);line-height:1.55">Zus&auml;tzliche Nutzer nur <strong style="color:var(--white)">&euro;15/Mo</strong> statt &euro;29/Mo &middot; J&auml;hrlich <strong style="color:var(--white)">&euro;150/Jahr</strong> statt &euro;275/Jahr &middot; G&uuml;ltig f&uuml;r alle Neukunden bis 31.12.2026</div>
   </div>
 
   <div class="checkout-note">Vor Abschluss eines Bezahlvorgangs wird die Zustimmung zur <a href="/datenschutz">Datenschutzerkl&auml;rung</a> eingeholt.</div>
@@ -353,8 +358,12 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
     <div class="rabatt-title"><span class="tag" style="background:rgba(16,185,129,.15);color:#6EE7B7">30 %</span> Testimonial-Partnerschaft</div>
     <div class="rabatt-desc">Einmalig 30 % auf die Erstbestellung &mdash; gegen ein kurzes Testimonial. Erste 30 B&uuml;ros. <a href="mailto:one@tgaassist.app" style="color:var(--blue2)">Jetzt anfragen</a></div>
   </div>
+  <div class="rabatt-card">
+    <div class="rabatt-title"><span class="tag" style="background:rgba(16,185,129,.15);color:#6EE7B7">&ndash;48 %</span> Gr&uuml;nderaktion 2026</div>
+    <div class="rabatt-desc">Zus&auml;tzliche Nutzer nur <strong style="color:var(--white)">&euro;15/Mo</strong> statt &euro;29/Mo. G&uuml;ltig f&uuml;r alle Neukunden bis 31.12.2026. Bestandskunden behalten den Preis dauerhaft.</div>
+  </div>
 
-  <div class="rabatt-warn">Rabattaktionen sind nicht miteinander kombinierbar. Der J&auml;hrlich-Vorteil (2 Monate gratis) gilt zus&auml;tzlich.</div>
+  <div class="rabatt-warn">Messerabatt und Testimonial-Rabatt sind nicht miteinander kombinierbar. Die Gr&uuml;nderaktion (Nutzerpreise) gilt unabh&auml;ngig davon. Der J&auml;hrlich-Vorteil (2 Monate gratis) gilt immer zus&auml;tzlich.</div>
 </section>
 
 <div class="divider"></div>
@@ -384,6 +393,10 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
   <div class="faq-item" onclick="toggleFaq(this)">
     <div class="faq-q">Was ist die Testimonial-Partnerschaft? <span class="faq-arrow">+</span></div>
     <div class="faq-a">Einmalig 30 % auf die Erstbestellung &mdash; gegen ein kurzes Testimonial-Zitat (2&ndash;4 S&auml;tze) und optional Logo-Nutzung. Gilt f&uuml;r die ersten 30 B&uuml;ros. Widerruf des Testimonials jederzeit m&ouml;glich.</div>
+  </div>
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Wie funktionieren zus&auml;tzliche Nutzer? <span class="faq-arrow">+</span></div>
+    <div class="faq-a">Jedes Bundle enth&auml;lt mindestens 1 Nutzer (Office Suite: 3). Weitere Nutzer buchst du als Add-on dazu &mdash; aktuell &euro;15/Mo im Rahmen der Gr&uuml;nderaktion 2026 (regul&auml;r &euro;29/Mo). J&auml;hrlich: &euro;150 statt &euro;275. Bestandskunden behalten ihren Preis auch nach Ende der Aktion.</div>
   </div>
   <div class="faq-item" onclick="toggleFaq(this)">
     <div class="faq-q">Kann ich sp&auml;ter upgraden? <span class="faq-arrow">+</span></div>
@@ -419,10 +432,10 @@ function setMode(m) {
   lblY.classList.toggle('active', yearly);
   pill.classList.toggle('show', yearly);
 
-  document.querySelectorAll('.price-toggle').forEach(el => {
+  document.querySelectorAll('.price-toggle').forEach(function(el) {
     el.textContent = yearly ? el.dataset.y : el.dataset.m;
   });
-  document.querySelectorAll('.yearly-info').forEach(el => {
+  document.querySelectorAll('.yearly-info').forEach(function(el) {
     el.style.opacity = yearly ? '1' : '0';
   });
 }
@@ -432,11 +445,20 @@ function toggleMode() {
 }
 
 function toggleFaq(el) {
-  const wasOpen = el.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  var wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
   if (!wasOpen) el.classList.add('open');
 }
 
-// Hide messe banner after date
+// Hide messe banner after expiry
 (function() {
-  const end =
+  var end = new Date('2026-05-04T23:59:59');
+  if (new Date() > end) {
+    var b = document.getElementById('messeBanner');
+    if (b) b.style.display = 'none';
+  }
+})();
+</script>
+
+</body>
+</html>
