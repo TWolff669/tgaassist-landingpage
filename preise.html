@@ -14,7 +14,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--ink);color:#CBD5E1;overflow-x:hidden;line-height:1.7}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.6}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,13,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,13,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
 .nav-logo{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px}
 .logo-dot{width:8px;height:8px;background:var(--blue);border-radius:50%;box-shadow:0 0 12px rgba(59,130,246,.5)}
 .nav-links{display:flex;gap:28px}
@@ -24,12 +24,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .nav-cta:hover{background:rgba(59,130,246,.25)}
 
 /* Messe Banner */
-.messe-banner{background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(245,158,11,.04));border-bottom:1px solid rgba(245,158,11,.2);padding:10px 40px;text-align:center;font-size:13px;color:#FCD34D;position:fixed;top:61px;left:0;right:0;z-index:99}
+.messe-banner{background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(245,158,11,.04));border-bottom:1px solid rgba(245,158,11,.2);padding:16px 40px;text-align:center;font-size:13px;color:#FCD34D;position:fixed;top:72px;left:0;right:0;z-index:99}
 .messe-banner code{background:rgba(245,158,11,.2);padding:2px 10px;border-radius:5px;font-family:'Plus Jakarta Sans',monospace;font-weight:600;letter-spacing:1px;font-size:12px}
 .messe-banner strong{color:#FBBF24}
 
 /* Hero */
-.price-hero{padding:165px 40px 60px;text-align:center;position:relative;max-width:800px;margin:0 auto}
+.price-hero{padding:200px 40px 60px;text-align:center;position:relative;max-width:800px;margin:0 auto}
 .price-hero h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;color:var(--white);letter-spacing:-.03em;line-height:1.1;margin-bottom:14px}
 .price-hero h1 span{background:linear-gradient(135deg,var(--blue2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .price-hero p{font-size:17px;color:var(--muted);max-width:500px;margin:0 auto 28px;line-height:1.65}
@@ -80,7 +80,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 
 /* Einzeltools table */
 .tools-section{max-width:800px;margin:0 auto;padding:40px 40px 60px;position:relative;z-index:1}
-.tool-row{display:grid;grid-template-columns:1fr 100px 120px 100px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);transition:background .15s}
+.tool-row{display:grid;grid-template-columns:1fr 80px 100px 80px 100px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);transition:background .15s}
 .tool-row:hover{background:rgba(255,255,255,.02)}
 .tool-row.header{border-bottom:1px solid var(--line2)}
 .tool-row.header span{font-size:12px;font-weight:600;color:var(--slate);text-transform:uppercase;letter-spacing:1px}
@@ -96,6 +96,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .tool-link{text-align:center}
 .tool-link a{font-size:12px;color:var(--blue2);text-decoration:none;font-weight:500}
 .tool-link a:hover{text-decoration:underline}
+.tool-buy{text-align:center}
+.tool-buy a{font-size:11px;color:var(--blue2);font-weight:600;background:rgba(59,130,246,.1);padding:4px 10px;border-radius:6px;text-decoration:none;transition:all .2s;white-space:nowrap}
+.tool-buy a:hover{background:rgba(59,130,246,.2)}
 .gravity-hint{background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:12px;padding:16px 20px;margin-top:20px;font-size:13px;color:#FCD34D;text-align:center;line-height:1.55}
 
 /* Rabatt info */
@@ -138,14 +141,14 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
 .footer-copy{font-size:12.5px;color:var(--slate)}
 
 @media(max-width:800px){
-  nav{padding:14px 20px}.nav-links{display:none}
-  .messe-banner{top:49px;padding:8px 16px;font-size:12px}
-  .price-hero{padding:145px 20px 40px}
+  nav{padding:20px 20px}.nav-links{display:none}
+  .messe-banner{top:64px;padding:14px 16px;font-size:12px}
+  .price-hero{padding:175px 20px 40px}
   .price-section,.tools-section,.rabatt-section,.faq-section{padding-left:20px;padding-right:20px}
   .bundle-grid{grid-template-columns:1fr;max-width:400px;margin:20px auto 0}
   .bundle-card.featured{transform:none}.bundle-card.featured:hover{transform:translateY(-4px)}
-  .tool-row{grid-template-columns:1fr 80px 80px;font-size:13px}
-  .tool-link{display:none}
+  .tool-row{grid-template-columns:1fr 70px 100px;font-size:13px}
+  .tool-link{display:none}.tool-buy{display:none}
   .free-strip{flex-direction:column;padding:0 20px 40px}
   footer{flex-direction:column;align-items:flex-start;padding:28px 20px}
 }
@@ -245,7 +248,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
       <div class="bundle-divider"></div>
       <ul class="bundle-apps">
         <li>Alle 5 Professional-Tools</li>
-        <li><a href="/apps/hoai-manager" style="color:inherit;text-decoration:none"><strong>HOAI-TGA-Manager</strong> &mdash; Honorar &amp; Billing</a></li>
+        <li><a href="/apps/hoai-manager" style="color:inherit;text-decoration:none"><strong>HOAI-TGA-Manager</strong> &mdash; Kostenzentrale f&uuml;r Angebot, Rechnung &amp; Liquidit&auml;t</a></li>
         <li><a href="/apps/projekt-profi" style="color:inherit;text-decoration:none"><strong>Projekt Profi</strong> &mdash; HOAI LPH 1&ndash;9</a></li>
       </ul>
       <div class="bundle-users">Bis 3 Nutzer &middot; weitere +&euro;15/Nutzer <span style="font-size:11px;color:#6EE7B7">(Gr&uuml;nderaktion, reg. &euro;29)</span></div>
@@ -273,6 +276,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
     <span style="text-align:right">Preis</span>
     <span style="text-align:center">Im Bundle ab</span>
     <span style="text-align:center">Details</span>
+    <span style="text-align:center">Buchen</span>
   </div>
 
   <div class="tool-row">
@@ -280,45 +284,67 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
     <div class="tool-price"><span class="price-toggle" data-m="29" data-y="23">29</span> &euro;</div>
     <div class="tool-bundle"><span class="bundle-tag tag-starter">Starter</span></div>
     <div class="tool-link"><a href="/apps/gaeb-konverter">Ansehen &rarr;</a></div>
+    <div class="tool-buy"><a href="https://buy.stripe.com/bJe3cw1ee8c5fTZ9TZ48003" class="link-toggle" data-href-m="https://buy.stripe.com/bJe3cw1ee8c5fTZ9TZ48003" data-href-y="https://buy.stripe.com/28E3cwg9863X0Z51nt48004">Buchen</a></div>
   </div>
   <div class="tool-row">
     <div class="tool-name-col"><span class="name">Aufma&szlig; Pro</span><span class="sub">Digitales Aufma&szlig; &middot; REB 23.003</span></div>
     <div class="tool-price"><span class="price-toggle" data-m="39" data-y="31">39</span> &euro;</div>
     <div class="tool-bundle"><span class="bundle-tag tag-starter">Starter</span></div>
     <div class="tool-link"><a href="/apps/aufmass-pro">Ansehen &rarr;</a></div>
+    <div class="tool-buy"><a href="https://buy.stripe.com/4gM28s2iiakd6jp0jp4800e" class="link-toggle" data-href-m="https://buy.stripe.com/4gM28s2iiakd6jp0jp4800e" data-href-y="https://buy.stripe.com/5kQdRa7CC4ZT5flgin4800f">Buchen</a></div>
   </div>
   <div class="tool-row">
     <div class="tool-name-col"><span class="name">TGA-Abstimmungs-Tool</span><span class="sub">Bemusterung &middot; KI-Produktsuche</span></div>
     <div class="tool-price"><span class="price-toggle" data-m="29" data-y="23">29</span> &euro;</div>
     <div class="tool-bundle"><span class="bundle-tag tag-starter">Starter</span></div>
     <div class="tool-link"><a href="/apps/abstimmungs-tool">Ansehen &rarr;</a></div>
+    <div class="tool-buy"><a href="https://buy.stripe.com/28EeVe3mmakd4bhaY348007" class="link-toggle" data-href-m="https://buy.stripe.com/28EeVe3mmakd4bhaY348007" data-href-y="https://buy.stripe.com/cNi9AU5uu63X4bhc2748008">Buchen</a></div>
   </div>
   <div class="tool-row">
     <div class="tool-name-col"><span class="name">Nachtrag Navigator</span><span class="sub">VOB-Pr&uuml;fung &middot; KI-Streaming</span></div>
     <div class="tool-price"><span class="price-toggle" data-m="79" data-y="63">79</span> &euro;</div>
     <div class="tool-bundle"><span class="bundle-tag tag-pro">Professional</span></div>
     <div class="tool-link"><a href="/apps/nachtrag-navigator">Ansehen &rarr;</a></div>
+    <div class="tool-buy"><a href="https://buy.stripe.com/6oU7sM4qqgIB37d5DJ4800b" class="link-toggle" data-href-m="https://buy.stripe.com/6oU7sM4qqgIB37d5DJ4800b" data-href-y="https://buy.stripe.com/dRm3cw7CC3VP6jpfej4800c">Buchen</a></div>
   </div>
   <div class="tool-row">
     <div class="tool-name-col"><span class="name">Plan Clarity AI</span><span class="sub">LV-Qualit&auml;t &middot; Doppel-Pass</span></div>
     <div class="tool-price"><span class="price-toggle" data-m="59" data-y="47">59</span> &euro;</div>
     <div class="tool-bundle"><span class="bundle-tag tag-pro">Professional</span></div>
     <div class="tool-link"><a href="/apps/plan-clarity">Ansehen &rarr;</a></div>
+    <div class="tool-buy"><a href="https://buy.stripe.com/00w3cw2iieAt9vBeaf48009" class="link-toggle" data-href-m="https://buy.stripe.com/00w3cw2iieAt9vBeaf48009" data-href-y="https://buy.stripe.com/6oUdRae107815fl5DJ4800a">Buchen</a></div>
   </div>
   <div class="tool-row">
-    <div class="tool-name-col"><span class="name">HOAI-TGA-Manager</span><span class="sub">Honorar &amp; Abrechnung &middot; B&auml;rbel</span></div>
+    <div class="tool-name-col"><span class="name">HOAI-TGA-Manager</span><span class="sub">Kostenzentrale &middot; Angebot, Rechnung, Liquidit&auml;t &middot; B&auml;rbel</span></div>
     <div class="tool-price"><span class="price-toggle" data-m="99" data-y="78">99</span> &euro;</div>
     <div class="tool-bundle"><span class="bundle-tag tag-suite">Office Suite</span></div>
     <div class="tool-link"><a href="/apps/hoai-manager">Ansehen &rarr;</a></div>
+    <div class="tool-buy"><a href="https://buy.stripe.com/6oU28sf54boh6jp5DJ48005" class="link-toggle" data-href-m="https://buy.stripe.com/6oU28sf54boh6jp5DJ48005" data-href-y="https://buy.stripe.com/14A00k9KKeAt8rx2rx48006">Buchen</a></div>
   </div>
   <div class="tool-row">
     <div class="tool-name-col"><span class="name">Projekt Profi</span><span class="sub">HOAI LPH 1&ndash;9 &middot; Kapazit&auml;t</span></div>
     <div class="tool-price"><span class="price-toggle" data-m="59" data-y="47">59</span> &euro;</div>
     <div class="tool-bundle"><span class="bundle-tag tag-suite">Office Suite</span></div>
     <div class="tool-link"><a href="/apps/projekt-profi">Ansehen &rarr;</a></div>
+    <div class="tool-buy"><a href="https://buy.stripe.com/eVqdRa9KK7816jpaY348001" class="link-toggle" data-href-m="https://buy.stripe.com/eVqdRa9KK7816jpaY348001" data-href-y="https://buy.stripe.com/8x29AU8GG3VP7ntc2748002">Buchen</a></div>
   </div>
 
-  <div class="gravity-hint">Rechenbeispiel: GAEB Konverter (&euro;29) + Nachtrag Navigator (&euro;79) = <strong>&euro;108/Mo</strong> &mdash; das Professional-Bundle mit 5 Apps kostet nur <strong>&euro;139/Mo</strong>.</div>
+  <div class="gravity-hint" style="margin-bottom:12px">
+    <div style="font-size:13px;font-weight:600;color:var(--white);margin-bottom:8px">Rechenbeispiel 1: Office Suite vs. Einzeltools</div>
+    <div style="font-size:13px;line-height:1.6">
+      Alle 7 Apps einzeln: &euro;29 + &euro;39 + &euro;29 + &euro;79 + &euro;59 + &euro;99 + &euro;59 = <strong style="color:#F87171">&euro;393/Mo f&uuml;r 1 Nutzer</strong><br>
+      Office Suite: <strong style="color:#6EE7B7">&euro;249/Mo f&uuml;r bis zu 3 Nutzer</strong><br>
+      <span style="color:var(--white);font-weight:600">Ersparnis: &euro;144/Mo + 2 zus&auml;tzliche Nutzer inklusive</span>
+    </div>
+  </div>
+  <div class="gravity-hint">
+    <div style="font-size:13px;font-weight:600;color:var(--white);margin-bottom:8px">Rechenbeispiel 2: Professional vs. Einzeltools</div>
+    <div style="font-size:13px;line-height:1.6">
+      GAEB (&euro;29) + Aufma&szlig; (&euro;39) + Nachtrag (&euro;79) + Plan Clarity (&euro;59) = <strong style="color:#F87171">&euro;206/Mo</strong><br>
+      Professional-Bundle mit allen 5 Apps: <strong style="color:#6EE7B7">&euro;139/Mo</strong><br>
+      <span style="color:var(--white);font-weight:600">Ersparnis: &euro;67/Mo &mdash; und das Abstimmungs-Tool gibt&rsquo;s gratis dazu</span>
+    </div>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -416,6 +442,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
   <div class="footer-copy">&copy; 2026 TGAassist &middot; Alle Preise netto zzgl. MwSt.</div>
 </footer>
 
+<script>
 let mode = 'monthly';
 
 function setMode(m) {
@@ -450,10 +477,17 @@ function toggleFaq(el) {
   var wasOpen = el.classList.contains('open');
   document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
   if (!wasOpen) el.classList.add('open');
-}
 
 // Hide messe banner after expiry
-(function(){var e=new Date("2026-05-04T23:59:59");if(new Date()>e){var b=document.getElementById("messeBanner");if(b)b.style.display="none";}})();
+
+// Hide messe banner after expiry
+(function(){
+  var end = new Date("2026-05-04T23:59:59");
+  if (new Date() > end) {
+    var b = document.getElementById("messeBanner");
+    if (b) b.style.display = "none";
+  }
+})();
 </script>
 
 </body>
