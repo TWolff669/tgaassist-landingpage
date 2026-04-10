@@ -112,6 +112,13 @@
       .nav-links{display:none}
       footer{flex-direction:column;align-items:flex-start}
     }
+
+    /* Messe Banner */
+    .messe-banner-inline{background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(245,158,11,.04));border-bottom:1px solid rgba(245,158,11,.2);padding:10px 40px;text-align:center;font-size:13px;color:#FCD34D;position:fixed;top:0;left:0;right:0;z-index:101;transform:translateY(-100%);transition:transform .4s ease}
+    .messe-banner-inline.show{transform:translateY(0)}
+    .messe-banner-inline code{background:rgba(245,158,11,.2);padding:2px 10px;border-radius:5px;font-family:"Plus Jakarta Sans",monospace;font-weight:600;letter-spacing:1px;font-size:12px}
+    .messe-banner-inline strong{color:#FBBF24}
+    @media(max-width:600px){.messe-banner-inline{padding:8px 16px;font-size:12px}}
   </style>
 </head>
 <body>
@@ -119,15 +126,21 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
+<!-- Messe Banner -->
+<div class="messe-banner-inline" id="messeBanner">
+  IFH/Intherm 2026 &mdash; <strong>20 % Messerabatt</strong> mit Code <code>MESSEIFH26</code> &middot; <a href="/preise" style="color:#FCD34D;text-decoration:underline">Preise ansehen</a>
+</div>
+
 <nav id="nav">
-  <a href="index.html" class="nav-logo"><div class="logo-dot"></div>TGAassist</a>
+  <a href="/" class="nav-logo"><div class="logo-dot"></div>TGAassist</a>
   <div class="nav-links">
-    <a href="index.html#tools">Werkzeuge</a>
-    <a href="index.html#wie">Wie es funktioniert</a>
-    <a href="index.html#preise">Preise</a>
-    <a href="index.html#kontakt">Kontakt</a>
+    <a href="/#tools">Apps</a>
+    <a href="/#wie">Wie es funktioniert</a>
+    <a href="/preise">Preise</a>
+    <a href="/blog" style="color:var(--white)">Blog</a>
+    <a href="/#kontakt">Kontakt</a>
   </div>
-  <a href="index.html#preise" class="nav-cta">Jetzt starten →</a>
+  <a href="/preise" class="nav-cta">Jetzt starten →</a>
 </nav>
 
 <!-- HERO -->
@@ -208,10 +221,10 @@
 <footer>
   <div class="footer-logo">TGAassist</div>
   <div class="footer-links">
-    <a href="datenschutz.html">Datenschutz</a>
-    <a href="impressum.html">Impressum</a>
-    <a href="agb.html">AGB</a>
-    <a href="index.html#kontakt">Kontakt</a>
+    <a href="/datenschutz">Datenschutz</a>
+    <a href="/impressum">Impressum</a>
+    <a href="/agb">AGB</a>
+    <a href="mailto:one@tgaassist.app">Kontakt</a>
   </div>
   <div class="footer-copy">© 2026 TGAassist · Alle Preise netto zzgl. 19 % MwSt.</div>
 </footer>
@@ -237,6 +250,10 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{
     btn.classList.add('active');
   });
 });
+
+// Messe Banner
+setTimeout(()=>{var b=document.getElementById('messeBanner');if(b)b.classList.add('show');},400);
+(function(){var e=new Date("2026-05-04T23:59:59");if(new Date()>e){var b=document.getElementById("messeBanner");if(b)b.style.display="none";}})();
 </script>
 </body>
 </html>

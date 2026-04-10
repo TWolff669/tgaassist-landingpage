@@ -9,5 +9,5 @@
 
 [[redirects]]
   from = "/blog"
-  to = "/blog/index.html"
+  to = "/blog.html"
   status = 200
