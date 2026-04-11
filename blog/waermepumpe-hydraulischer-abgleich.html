@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Wärmepumpe und hydraulischer Abgleich | TGAassist Blog</title>
+  <meta name="description" content="Ohne korrekten hydraulischen Abgleich kein effizienter Wärmepumpenbetrieb. Ein Praxisleitfaden für TGA-Planer und Ausführende."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--ink:#060D1A;--ink2:#0C1628;--navy:#0F2040;--blue:#3B82F6;--blue2:#60A5FA;--cyan:#22D3EE;--gold:#F59E0B;--green:#10B981;--slate:#64748B;--muted:#94A3B8;--line:rgba(255,255,255,0.07);--white:#FFFFFF;--card:rgba(255,255,255,0.035);--card-h:rgba(255,255,255,0.065)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;line-height:1.7}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.6}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:all .3s ease}
+    nav.scrolled{background:rgba(6,13,26,.9);backdrop-filter:blur(20px);padding:14px 40px;border-bottom:1px solid var(--line)}
+    .nav-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--white);letter-spacing:-.02em;display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-dot{width:8px;height:8px;background:var(--blue);border-radius:50%;box-shadow:0 0 12px var(--blue)}
+    .nav-links{display:flex;align-items:center;gap:32px}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--white)}
+    .nav-cta{font-size:13.5px;font-weight:600;color:var(--white);background:var(--blue);padding:9px 20px;border-radius:8px;text-decoration:none;transition:background .2s}
+    .nav-cta:hover{background:#2563EB}
+    .article-header{padding:160px 40px 60px;max-width:780px;margin:0 auto;position:relative;z-index:1}
+    .article-cat{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+    .article-header h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4.5vw,48px);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin-bottom:20px}
+    .article-meta{font-size:13px;color:var(--slate);display:flex;gap:20px;flex-wrap:wrap}
+    .article-body{max-width:720px;margin:0 auto;padding:0 40px 80px;position:relative;z-index:1}
+    .article-body p{font-size:16px;color:rgba(255,255,255,.82);line-height:1.8;margin-bottom:24px}
+    .article-body h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin:48px 0 16px;letter-spacing:-.01em;color:var(--white)}
+    .article-body h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin:36px 0 12px;color:var(--green)}
+    .article-body ul,.article-body ol{margin:0 0 24px 20px;color:rgba(255,255,255,.82)}
+    .article-body li{margin-bottom:8px;font-size:16px;line-height:1.7}
+    .article-body blockquote{border-left:3px solid var(--green);padding:16px 24px;margin:32px 0;background:rgba(16,185,129,.06);border-radius:0 8px 8px 0}
+    .article-body blockquote p{margin:0;font-style:italic;color:var(--green)}
+    .article-body strong{color:var(--white)}
+    .article-cta{max-width:720px;margin:0 auto 80px;padding:0 40px;position:relative;z-index:1}
+    .cta-box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:40px;text-align:center}
+    .cta-box h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px}
+    .cta-box p{color:var(--muted);font-size:14px;margin-bottom:24px}
+    .cta-box a{background:var(--blue);color:var(--white);padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s}
+    .cta-box a:hover{background:#2563EB}
+    .back-link{max-width:720px;margin:0 auto;padding:0 40px 60px;position:relative;z-index:1}
+    .back-link a{font-size:14px;color:var(--blue2);text-decoration:none;transition:color .2s}
+    .back-link a:hover{color:var(--white)}
+    footer{background:var(--ink);border-top:1px solid var(--line);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;position:relative;z-index:1}
+    .footer-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;letter-spacing:-.02em}
+    .footer-links{display:flex;gap:28px}
+    .footer-links a{font-size:13px;color:var(--slate);text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:var(--white)}
+    .footer-copy{font-size:12.5px;color:var(--slate)}
+    @media(max-width:600px){nav{padding:16px 20px}.nav-links{display:none}.article-header,.article-body,.article-cta,.back-link{padding-left:20px;padding-right:20px}footer{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo"><div class="logo-dot"></div>TGAassist</a>
+  <div class="nav-links">
+    <a href="/#tools">Apps</a>
+    <a href="/#wie">Wie es funktioniert</a>
+    <a href="/preise">Preise</a>
+    <a href="/blog">Blog</a>
+    <a href="/#kontakt">Kontakt</a>
+  </div>
+  <a href="/preise" class="nav-cta">Jetzt starten →</a>
+</nav>
+
+<header class="article-header">
+  <div class="article-cat">Heizung &amp; Energie</div>
+  <h1>Wärmepumpe und hydraulischer Abgleich</h1>
+  <div class="article-meta">
+    <span>✍ Thomas Wolff</span>
+    <span>📅 Februar 2026</span>
+    <span>⏱ 6 Min Lesezeit</span>
+  </div>
+</header>
+
+<article class="article-body">
+
+  <p>Die Wärmepumpe ist das Heizsystem der Stunde — politisch gewollt, technisch ausgereift, und inzwischen auch im Bestand angekommen. Was in der öffentlichen Debatte allerdings fast nie vorkommt: Ohne einen sauberen hydraulischen Abgleich arbeitet jede Wärmepumpe ineffizient. Im schlimmsten Fall so ineffizient, dass die Betriebskosten über denen einer modernen Gastherme liegen.</p>
+
+  <h2>Warum der hydraulische Abgleich bei Wärmepumpen wichtiger ist als bei jeder anderen Heizung</h2>
+
+  <p>Bei einer Gasbrennwerttherme verzeiht das System Fehler. Die Vorlauftemperatur ist hoch genug, um auch bei suboptimaler Durchströmung jeden Heizkörper warm zu bekommen. Es wird mehr Energie verbraucht als nötig, aber der Bewohner merkt es kaum.</p>
+
+  <p>Bei einer Wärmepumpe ist das anders. Wärmepumpen arbeiten mit niedrigen Vorlauftemperaturen — idealerweise 35 bis 45 °C. Jedes Grad mehr Vorlauftemperatur kostet messbar Effizienz. Wenn einzelne Heizkreise zu wenig Durchfluss haben und die Vorlauftemperatur hochgefahren werden muss, sinkt die Jahresarbeitszahl spürbar. Ein Unterschied von 5 Kelvin in der Vorlauftemperatur kann 10 bis 15 % Mehrverbrauch bedeuten.</p>
+
+  <blockquote><p>„Eine Wärmepumpe ohne hydraulischen Abgleich ist wie ein Sportwagen mit angezogener Handbremse — sie fährt, aber nicht so, wie sie soll."</p></blockquote>
+
+  <h2>Verfahren A vs. Verfahren B — was in der Praxis zählt</h2>
+
+  <p>Der hydraulische Abgleich kann nach zwei Verfahren durchgeführt werden:</p>
+
+  <h3>Verfahren A (vereinfacht)</h3>
+
+  <p>Schätzung der Heizlast pro Raum anhand von Erfahrungswerten und überschlägiger Berechnung. Einstellung der Ventile auf Basis dieser Schätzung. Schneller, günstiger — aber ungenauer. Für einfache Bestandsgebäude mit überschaubarer Anlage oft ausreichend.</p>
+
+  <h3>Verfahren B (raumweise Heizlastberechnung)</h3>
+
+  <p>Heizlastberechnung nach DIN EN 12831 für jeden einzelnen Raum. Daraus ergeben sich exakte Volumenströme pro Heizkreis. Aufwändiger, aber deutlich präziser — und bei Wärmepumpen im Grunde Pflicht, wenn man die Anlage wirtschaftlich betreiben will.</p>
+
+  <p>Seit 2024 ist bei Förderanträgen für den Heizungstausch über das BEG (Bundesförderung für effiziente Gebäude) der Nachweis eines hydraulischen Abgleichs nach Verfahren B in vielen Fällen erforderlich. Das heißt: Ohne raumweise Heizlastberechnung keine Förderung.</p>
+
+  <h2>Die drei häufigsten Praxisprobleme</h2>
+
+  <h3>1. Bestandsdaten fehlen</h3>
+
+  <p>Im Altbau fehlen fast immer belastbare Unterlagen: keine Rohrnetzberechnung, keine dokumentierten Heizkörperleistungen, keine Angaben zur Dämmung. Der Planer muss mit Aufmaß und Schätzung arbeiten — was Verfahren B aufwändig macht, aber nicht unmöglich.</p>
+
+  <h3>2. Heizkörper sind unterdimensioniert</h3>
+
+  <p>Viele Bestandsheizkörper wurden für Vorlauftemperaturen von 70/55 °C ausgelegt. Bei 45/35 °C liefern sie nur noch einen Bruchteil der Nennleistung. Das bedeutet in der Praxis: Entweder einzelne Heizkörper tauschen oder die Vorlauftemperatur höher fahren — was wiederum die Effizienz senkt.</p>
+
+  <p>Hier braucht es eine ehrliche Berechnung statt Wunschdenken. Nicht jeder Raum lässt sich mit den vorhandenen Heizflächen bei 35 °C Vorlauf warm bekommen. Das muss der Planer dem Bauherrn sagen — auch wenn es unbequem ist.</p>
+
+  <h3>3. Der Abgleich wird einmal gemacht und nie wieder angefasst</h3>
+
+  <p>Ein hydraulischer Abgleich ist keine einmalige Aktion. Wenn sich Nutzungen ändern, Räume umgebaut oder zusätzlich gedämmt werden, stimmen die ursprünglichen Einstellungen nicht mehr. Regelmäßige Überprüfung und Nachjustierung gehört zur ordnungsgemäßen Betriebsführung — wird aber in der Praxis fast nie gemacht.</p>
+
+  <h2>Was das für den TGA-Planer bedeutet</h2>
+
+  <p>Der hydraulische Abgleich ist kein Thema, das man dem Heizungsbauer überlassen sollte — jedenfalls nicht ohne Vorgaben. Als TGA-Planer ist man dafür verantwortlich, dass die Anlage so ausgelegt wird, dass sie effizient funktioniert. Dazu gehört:</p>
+
+  <ul>
+    <li>Raumweise Heizlastberechnung nach DIN EN 12831</li>
+    <li>Auslegung der Heizflächen auf die Ziel-Vorlauftemperatur</li>
+    <li>Rohrnetzberechnung mit Druckverlustnachweis</li>
+    <li>Vorgabe der Ventileinstellungen für jeden Heizkreis</li>
+    <li>Dokumentation als Nachweis für Fördermittelanträge</li>
+  </ul>
+
+  <p>Wer das sauber macht, liefert nicht nur eine funktionierende Anlage, sondern auch einen zufriedenen Bauherrn — und einen Nachweis, der im Streitfall Gold wert ist.</p>
+
+  <h2>Fazit</h2>
+
+  <p>Der hydraulische Abgleich ist bei Wärmepumpen keine Option, sondern eine Notwendigkeit. Er entscheidet darüber, ob die Anlage ihre theoretische Effizienz auch in der Praxis erreicht. Für TGA-Planer ist das eine Chance: Wer hier sauber arbeitet, hebt sich von der Masse ab — und schafft echten Mehrwert für den Bauherrn.</p>
+
+</article>
+
+<div class="article-cta">
+  <div class="cta-box">
+    <h3>Wärmepumpen-Projekte sauber planen</h3>
+    <p>Mit dem Wärmepumpen-Checkup prüfst du in Minuten, ob ein Gebäude für den Wärmepumpenbetrieb geeignet ist.</p>
+    <a href="/apps/waermepumpen-checkup">Kostenlos testen →</a>
+  </div>
+</div>
+
+<div class="back-link">
+  <a href="/blog">← Zurück zur Übersicht</a>
+</div>
+
+<footer>
+  <div class="footer-logo">TGAassist</div>
+  <div class="footer-links">
+    <a href="/datenschutz">Datenschutz</a>
+    <a href="/impressum">Impressum</a>
+    <a href="/agb">AGB</a>
+    <a href="mailto:one@tgaassist.app">Kontakt</a>
+  </div>
+  <div class="footer-copy">© 2026 TGAassist · Alle Preise netto zzgl. 19 % MwSt.</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+</script>
+</body>
+</html>

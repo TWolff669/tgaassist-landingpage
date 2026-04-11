@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>VOB/B Nachträge — was Planer wirklich wissen müssen | TGAassist Blog</title>
+  <meta name="description" content="Wann ist ein Nachtrag berechtigt? Welche Fristen gelten? Wie schützt du dich als TGA-Planer? Ein Praxisleitfaden ohne Juristendeutsch."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--ink:#060D1A;--ink2:#0C1628;--navy:#0F2040;--blue:#3B82F6;--blue2:#60A5FA;--cyan:#22D3EE;--gold:#F59E0B;--green:#10B981;--slate:#64748B;--muted:#94A3B8;--line:rgba(255,255,255,0.07);--white:#FFFFFF;--card:rgba(255,255,255,0.035);--card-h:rgba(255,255,255,0.065)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;line-height:1.7}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.6}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:all .3s ease}
+    nav.scrolled{background:rgba(6,13,26,.9);backdrop-filter:blur(20px);padding:14px 40px;border-bottom:1px solid var(--line)}
+    .nav-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--white);letter-spacing:-.02em;display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-dot{width:8px;height:8px;background:var(--blue);border-radius:50%;box-shadow:0 0 12px var(--blue)}
+    .nav-links{display:flex;align-items:center;gap:32px}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--white)}
+    .nav-cta{font-size:13.5px;font-weight:600;color:var(--white);background:var(--blue);padding:9px 20px;border-radius:8px;text-decoration:none;transition:background .2s}
+    .nav-cta:hover{background:#2563EB}
+    .article-header{padding:160px 40px 60px;max-width:780px;margin:0 auto;position:relative;z-index:1}
+    .article-cat{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+    .article-header h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4.5vw,48px);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin-bottom:20px}
+    .article-meta{font-size:13px;color:var(--slate);display:flex;gap:20px;flex-wrap:wrap}
+    .article-body{max-width:720px;margin:0 auto;padding:0 40px 80px;position:relative;z-index:1}
+    .article-body p{font-size:16px;color:rgba(255,255,255,.82);line-height:1.8;margin-bottom:24px}
+    .article-body h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin:48px 0 16px;letter-spacing:-.01em;color:var(--white)}
+    .article-body h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin:36px 0 12px;color:var(--gold)}
+    .article-body ul,.article-body ol{margin:0 0 24px 20px;color:rgba(255,255,255,.82)}
+    .article-body li{margin-bottom:8px;font-size:16px;line-height:1.7}
+    .article-body blockquote{border-left:3px solid var(--gold);padding:16px 24px;margin:32px 0;background:rgba(245,158,11,.06);border-radius:0 8px 8px 0}
+    .article-body blockquote p{margin:0;font-style:italic;color:var(--gold)}
+    .article-body strong{color:var(--white)}
+    .article-cta{max-width:720px;margin:0 auto 80px;padding:0 40px;position:relative;z-index:1}
+    .cta-box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:40px;text-align:center}
+    .cta-box h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px}
+    .cta-box p{color:var(--muted);font-size:14px;margin-bottom:24px}
+    .cta-box a{background:var(--blue);color:var(--white);padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s}
+    .cta-box a:hover{background:#2563EB}
+    .back-link{max-width:720px;margin:0 auto;padding:0 40px 60px;position:relative;z-index:1}
+    .back-link a{font-size:14px;color:var(--blue2);text-decoration:none;transition:color .2s}
+    .back-link a:hover{color:var(--white)}
+    footer{background:var(--ink);border-top:1px solid var(--line);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;position:relative;z-index:1}
+    .footer-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;letter-spacing:-.02em}
+    .footer-links{display:flex;gap:28px}
+    .footer-links a{font-size:13px;color:var(--slate);text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:var(--white)}
+    .footer-copy{font-size:12.5px;color:var(--slate)}
+    @media(max-width:600px){nav{padding:16px 20px}.nav-links{display:none}.article-header,.article-body,.article-cta,.back-link{padding-left:20px;padding-right:20px}footer{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo"><div class="logo-dot"></div>TGAassist</a>
+  <div class="nav-links">
+    <a href="/#tools">Apps</a>
+    <a href="/#wie">Wie es funktioniert</a>
+    <a href="/preise">Preise</a>
+    <a href="/blog">Blog</a>
+    <a href="/#kontakt">Kontakt</a>
+  </div>
+  <a href="/preise" class="nav-cta">Jetzt starten →</a>
+</nav>
+
+<header class="article-header">
+  <div class="article-cat">VOB/B &amp; Recht</div>
+  <h1>VOB/B Nachträge — was Planer wirklich wissen müssen</h1>
+  <div class="article-meta">
+    <span>✍ Thomas Wolff</span>
+    <span>📅 März 2026</span>
+    <span>⏱ 7 Min Lesezeit</span>
+  </div>
+</header>
+
+<article class="article-body">
+
+  <p>Nachträge gehören zur TGA-Planung wie der hydraulische Abgleich zur Wärmepumpe — unvermeidlich, oft unangenehm, und mit direkten finanziellen Konsequenzen. Trotzdem ist das Thema in vielen Büros ein blinder Fleck: Man weiß, dass Nachträge wichtig sind, aber im Tagesgeschäft fehlt die Zeit, jeden einzelnen sauber aufzuarbeiten. Das kann teuer werden.</p>
+
+  <h2>Wann ist ein Nachtrag überhaupt berechtigt?</h2>
+
+  <p>Die VOB/B regelt Nachträge im Wesentlichen in den §§ 1 und 2. Vereinfacht gesagt: Ein Nachtrag ist berechtigt, wenn der Auftraggeber eine Leistung fordert, die im ursprünglichen Vertrag nicht enthalten war — oder wenn sich die Grundlagen der Preisermittlung wesentlich geändert haben.</p>
+
+  <p>In der TGA-Praxis heißt das konkret:</p>
+
+  <ul>
+    <li><strong>Geänderte Leistung (§ 2 Abs. 5 VOB/B):</strong> Der Bauherr ändert die Raumaufteilung, und plötzlich braucht die Lüftungsanlage drei zusätzliche Brandschutzklappen. Die waren im LV nicht drin — also Nachtrag.</li>
+    <li><strong>Zusätzliche Leistung (§ 2 Abs. 6 VOB/B):</strong> Während der Bauausführung stellt sich heraus, dass die Bestandsdecke für die geplante Rohrleitungsführung nicht tragfähig ist. Eine alternative Trassenführung wird nötig — zusätzliche Leistung.</li>
+    <li><strong>Mengenmehrung (§ 2 Abs. 3 VOB/B):</strong> Statt 120 Meter Rohrleitung werden 180 Meter benötigt. Ab 10 % Abweichung vom Vordersatz greift der Anspruch auf Preisanpassung.</li>
+  </ul>
+
+  <h2>Die drei häufigsten Fehler bei Nachträgen</h2>
+
+  <h3>1. Keine rechtzeitige Anzeige</h3>
+
+  <p>Der häufigste und teuerste Fehler: Der Auftragnehmer führt die Zusatzleistung aus, ohne sie vorher als Nachtrag anzumelden. Nach § 2 Abs. 6 Nr. 1 VOB/B muss die zusätzliche Leistung vor Ausführung angezeigt werden. Wer das versäumt, riskiert, auf den Kosten sitzenzubleiben.</p>
+
+  <p>Für den TGA-Planer bedeutet das: Wenn auf der Baustelle eine Abweichung erkennbar wird, sofort dokumentieren und schriftlich anzeigen — nicht erst bei der Schlussrechnung.</p>
+
+  <h3>2. Fehlende Dokumentation</h3>
+
+  <p>Ein Nachtrag ohne Dokumentation ist ein Nachtrag, der vor Gericht verliert. Fotos, Planvergleiche, Baubesprechungsprotokolle, E-Mails — alles, was belegt, dass die geänderte oder zusätzliche Leistung vom Auftraggeber veranlasst wurde, ist relevant.</p>
+
+  <blockquote><p>„Die beste Nachtragsberechnung nützt nichts, wenn du nicht belegen kannst, dass die Änderung vom Auftraggeber kam."</p></blockquote>
+
+  <h3>3. Falsche Preisermittlung</h3>
+
+  <p>Nachtragspreise müssen auf Basis der Kalkulation des Hauptauftrags ermittelt werden — nicht auf Basis von Marktpreisen oder Wunschvorstellungen. Die sogenannte „vorkalkulatorische Preisfortschreibung" ist der Grundsatz. Wer hier unsauber arbeitet, gibt dem Auftraggeber einen Grund zur Ablehnung.</p>
+
+  <h2>Was bedeutet das für den TGA-Fachplaner?</h2>
+
+  <p>Als Fachplaner steht man bei Nachträgen oft zwischen den Stühlen. Der Auftragnehmer will seinen Nachtrag durchsetzen, der Bauherr will ihn ablehnen — und der Planer soll prüfen, ob der Nachtrag berechtigt ist.</p>
+
+  <p>Diese Prüfung ist keine Formsache. Sie erfordert:</p>
+
+  <ul>
+    <li>Vergleich zwischen beauftragter und tatsächlich erbrachter Leistung</li>
+    <li>Prüfung der vertraglichen Grundlage (LV, Pläne, Baubeschreibung)</li>
+    <li>Bewertung der Preisermittlung nach den Grundsätzen der VOB/B</li>
+    <li>Einschätzung, ob die Anzeigepflicht eingehalten wurde</li>
+  </ul>
+
+  <p>Das ist aufwändig — und es passiert in der Praxis viel zu oft unter Zeitdruck, zwischen zwei Baubesprechungen, ohne dass alle Unterlagen griffbereit sind.</p>
+
+  <h2>Fristen, die jeder Planer kennen muss</h2>
+
+  <p>Bei Nachträgen gibt es keine einheitliche Frist, aber einige Grundregeln:</p>
+
+  <ul>
+    <li><strong>Ankündigung:</strong> Vor Ausführung der geänderten/zusätzlichen Leistung</li>
+    <li><strong>Nachtragsangebot:</strong> Zeitnah nach der Ankündigung — in der Praxis innerhalb von 2–4 Wochen</li>
+    <li><strong>Prüfung durch den Planer:</strong> Ohne feste Frist, aber: Je später die Prüfung, desto schwieriger die Nachvollziehbarkeit</li>
+    <li><strong>Verjährung:</strong> Nachtragsansprüche verjähren nach den allgemeinen Regeln — in der Regel 3 Jahre nach Abnahme</li>
+  </ul>
+
+  <h2>Systematische Nachtragsprüfung statt Bauchgefühl</h2>
+
+  <p>Die Realität in vielen TGA-Büros: Nachträge werden nach Erfahrung und Bauchgefühl bewertet. Das funktioniert bei einfachen Fällen — aber bei komplexen Projekten mit dutzenden Nachträgen wird es riskant.</p>
+
+  <p>Eine systematische Prüfung folgt immer dem gleichen Schema: Ist die Leistung vertraglich geschuldet? Wurde die Änderung vom Auftraggeber veranlasst? Wurde rechtzeitig angezeigt? Ist die Preisermittlung nachvollziehbar? Diese vier Fragen reichen, um 90 % aller Nachträge sauber zu bewerten.</p>
+
+  <p>Werkzeuge, die diesen Prozess unterstützen — sei es durch automatischen Planvergleich, strukturierte Prüfprotokolle oder KI-gestützte Textanalyse — können den Zeitaufwand erheblich reduzieren, ohne dass die fachliche Qualität leidet.</p>
+
+  <h2>Fazit</h2>
+
+  <p>Nachträge sind kein Ärgernis, sondern ein normaler Bestandteil jedes Bauprojekts. Wer sie systematisch behandelt, schützt sich selbst, seine Auftragnehmer und seinen Auftraggeber. Wer sie ignoriert oder unter Zeitdruck durchwinkt, geht ein Haftungsrisiko ein, das kein Honorar der Welt rechtfertigt.</p>
+
+</article>
+
+<div class="article-cta">
+  <div class="cta-box">
+    <h3>Nachträge systematisch prüfen — mit dem Nachtrag Navigator</h3>
+    <p>KI-gestützte Analyse von Nachtragsansprüchen nach VOB/B. Vom Planer für Planer.</p>
+    <a href="/apps/nachtrag-navigator">Mehr erfahren →</a>
+  </div>
+</div>
+
+<div class="back-link">
+  <a href="/blog">← Zurück zur Übersicht</a>
+</div>
+
+<footer>
+  <div class="footer-logo">TGAassist</div>
+  <div class="footer-links">
+    <a href="/datenschutz">Datenschutz</a>
+    <a href="/impressum">Impressum</a>
+    <a href="/agb">AGB</a>
+    <a href="mailto:one@tgaassist.app">Kontakt</a>
+  </div>
+  <div class="footer-copy">© 2026 TGAassist · Alle Preise netto zzgl. 19 % MwSt.</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+</script>
+</body>
+</html>

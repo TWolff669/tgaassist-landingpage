@@ -11,3 +11,23 @@
   from = "/blog"
   to = "/blog.html"
   status = 200
+
+[[redirects]]
+  from = "/blog/ki-tga-planung"
+  to = "/blog/ki-tga-planung.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/vob-nachtraege"
+  to = "/blog/vob-nachtraege.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/waermepumpe-hydraulischer-abgleich"
+  to = "/blog/waermepumpe-hydraulischer-abgleich.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/plattformunabhaengig-arbeiten"
+  to = "/blog/plattformunabhaengig-arbeiten.html"
+  status = 200

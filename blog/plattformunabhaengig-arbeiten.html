@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Plattformunabhängiges Arbeiten im Planungsbüro | TGAassist Blog</title>
+  <meta name="description" content="Warum browserbasierte Tools für TGA-Büros der bessere Weg sind — und was dabei zu beachten ist. Ein Erfahrungsbericht."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--ink:#060D1A;--ink2:#0C1628;--navy:#0F2040;--blue:#3B82F6;--blue2:#60A5FA;--cyan:#22D3EE;--gold:#F59E0B;--green:#10B981;--slate:#64748B;--muted:#94A3B8;--line:rgba(255,255,255,0.07);--white:#FFFFFF;--card:rgba(255,255,255,0.035);--card-h:rgba(255,255,255,0.065)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;line-height:1.7}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.6}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:all .3s ease}
+    nav.scrolled{background:rgba(6,13,26,.9);backdrop-filter:blur(20px);padding:14px 40px;border-bottom:1px solid var(--line)}
+    .nav-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--white);letter-spacing:-.02em;display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-dot{width:8px;height:8px;background:var(--blue);border-radius:50%;box-shadow:0 0 12px var(--blue)}
+    .nav-links{display:flex;align-items:center;gap:32px}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--white)}
+    .nav-cta{font-size:13.5px;font-weight:600;color:var(--white);background:var(--blue);padding:9px 20px;border-radius:8px;text-decoration:none;transition:background .2s}
+    .nav-cta:hover{background:#2563EB}
+    .article-header{padding:160px 40px 60px;max-width:780px;margin:0 auto;position:relative;z-index:1}
+    .article-cat{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:16px}
+    .article-header h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4.5vw,48px);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin-bottom:20px}
+    .article-meta{font-size:13px;color:var(--slate);display:flex;gap:20px;flex-wrap:wrap}
+    .article-body{max-width:720px;margin:0 auto;padding:0 40px 80px;position:relative;z-index:1}
+    .article-body p{font-size:16px;color:rgba(255,255,255,.82);line-height:1.8;margin-bottom:24px}
+    .article-body h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin:48px 0 16px;letter-spacing:-.01em;color:var(--white)}
+    .article-body h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin:36px 0 12px;color:var(--cyan)}
+    .article-body ul,.article-body ol{margin:0 0 24px 20px;color:rgba(255,255,255,.82)}
+    .article-body li{margin-bottom:8px;font-size:16px;line-height:1.7}
+    .article-body blockquote{border-left:3px solid var(--cyan);padding:16px 24px;margin:32px 0;background:rgba(34,211,238,.06);border-radius:0 8px 8px 0}
+    .article-body blockquote p{margin:0;font-style:italic;color:var(--cyan)}
+    .article-body strong{color:var(--white)}
+    .article-cta{max-width:720px;margin:0 auto 80px;padding:0 40px;position:relative;z-index:1}
+    .cta-box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:40px;text-align:center}
+    .cta-box h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px}
+    .cta-box p{color:var(--muted);font-size:14px;margin-bottom:24px}
+    .cta-box a{background:var(--blue);color:var(--white);padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s}
+    .cta-box a:hover{background:#2563EB}
+    .back-link{max-width:720px;margin:0 auto;padding:0 40px 60px;position:relative;z-index:1}
+    .back-link a{font-size:14px;color:var(--blue2);text-decoration:none;transition:color .2s}
+    .back-link a:hover{color:var(--white)}
+    footer{background:var(--ink);border-top:1px solid var(--line);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;position:relative;z-index:1}
+    .footer-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;letter-spacing:-.02em}
+    .footer-links{display:flex;gap:28px}
+    .footer-links a{font-size:13px;color:var(--slate);text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:var(--white)}
+    .footer-copy{font-size:12.5px;color:var(--slate)}
+    @media(max-width:600px){nav{padding:16px 20px}.nav-links{display:none}.article-header,.article-body,.article-cta,.back-link{padding-left:20px;padding-right:20px}footer{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo"><div class="logo-dot"></div>TGAassist</a>
+  <div class="nav-links">
+    <a href="/#tools">Apps</a>
+    <a href="/#wie">Wie es funktioniert</a>
+    <a href="/preise">Preise</a>
+    <a href="/blog">Blog</a>
+    <a href="/#kontakt">Kontakt</a>
+  </div>
+  <a href="/preise" class="nav-cta">Jetzt starten →</a>
+</nav>
+
+<header class="article-header">
+  <div class="article-cat">Arbeitsweise &amp; Tools</div>
+  <h1>Plattformunabhängiges Arbeiten im Planungsbüro</h1>
+  <div class="article-meta">
+    <span>✍ Thomas Wolff</span>
+    <span>📅 Februar 2026</span>
+    <span>⏱ 4 Min Lesezeit</span>
+  </div>
+</header>
+
+<article class="article-body">
+
+  <p>Ich bin kürzlich auf ein Projekt angesprochen worden. Baubesprechung war um 14 Uhr, der Planer auf der anderen Seite brauchte bis dahin eine Rückmeldung zu drei geänderten LV-Positionen. Problem: Ich war nicht im Büro. Kein Windows-Rechner in Reichweite, nur ein iPad und mein Telefon.</p>
+
+  <p>Vor zwei Jahren hätte ich absagen müssen. Meine Tools liefen auf Windows, meine Dateien lagen auf dem Bürorechner, und remote arbeiten hieß bestenfalls: TeamViewer auf dem Handy mit Zoom-Gesten auf winzigen Buttons. Heute habe ich die Positionen in zehn Minuten geprüft, die Rückmeldung geschickt und war pünktlich zum Kaffee vor der Baubesprechung.</p>
+
+  <p>Was sich geändert hat? Nicht mein iPad — sondern meine Werkzeuge.</p>
+
+  <h2>Das Windows-Problem in der TGA-Branche</h2>
+
+  <p>Die TGA-Planung ist eine der letzten Branchen, die fast vollständig an Windows gebunden ist. AVA-Software, CAD-Programme, Berechnungstools für Heizlast und Rohrnetz — alles läuft auf Windows. Viele Programme sind nicht einmal webfähig, sondern erfordern lokale Installationen mit Dongle oder Netzwerklizenz.</p>
+
+  <p>Das war jahrelang kein Problem, weil Planer ohnehin am Schreibtisch saßen. Aber die Arbeitswelt hat sich verändert:</p>
+
+  <ul>
+    <li>Baubesprechungen vor Ort, zwischen denen Rückmeldungen nötig sind</li>
+    <li>Mitarbeiter im Homeoffice, die auf dieselben Daten zugreifen müssen</li>
+    <li>Bauherren, die abends um 21 Uhr eine Frage haben und eine Antwort erwarten</li>
+    <li>Planer, die auf Reisen oder zwischen Projekten arbeiten wollen</li>
+  </ul>
+
+  <p>Die Windows-Bindung wird zum operativen Nachteil — nicht weil Windows schlecht ist, sondern weil es die Arbeit an einen Ort und ein Gerät kettet.</p>
+
+  <h2>Was „browserbasiert" in der Praxis bedeutet</h2>
+
+  <p>Browserbasierte Tools laufen überall dort, wo ein Browser läuft — Windows, Mac, iPad, Android-Tablet, sogar auf dem Smartphone, wenn es sein muss. Keine Installation, keine Updates, die man selbst einspielen muss, keine Lizenzdongles.</p>
+
+  <p>Für ein TGA-Büro heißt das konkret:</p>
+
+  <ul>
+    <li><strong>Kein IT-Aufwand:</strong> Keine lokale Installation, keine Kompatibilitätsprobleme, keine Treibersuche.</li>
+    <li><strong>Sofortiger Zugriff:</strong> Link öffnen, einloggen, arbeiten. Egal wo, egal mit welchem Gerät.</li>
+    <li><strong>Automatische Updates:</strong> Neue Funktionen sind sofort verfügbar, ohne dass jemand im Büro etwas tun muss.</li>
+    <li><strong>Echte Zusammenarbeit:</strong> Zwei Mitarbeiter können gleichzeitig an denselben Daten arbeiten, ohne Dateikonflikte.</li>
+  </ul>
+
+  <blockquote><p>„Ich will planen, nicht administrieren. Jede Stunde, die ich mit Software-Updates verbringe, ist eine Stunde, die ich nicht planen kann."</p></blockquote>
+
+  <h2>Wo es funktioniert — und wo (noch) nicht</h2>
+
+  <p>Nicht jede Aufgabe lässt sich heute schon sinnvoll im Browser erledigen. CAD-Arbeit — insbesondere komplexe 3D-Modellierung — braucht nach wie vor leistungsfähige lokale Software. Heizlastberechnungen nach DIN EN 12831 oder Rohrnetzberechnungen laufen in spezialisierten Programmen, die nicht browserbasiert verfügbar sind.</p>
+
+  <p>Aber: Die Mehrheit der täglichen Büroarbeit in einem TGA-Planungsbüro ist nicht CAD. Es ist Kommunikation, Prüfung, Dokumentation und Verwaltung. Und genau diese Aufgaben lassen sich heute problemlos im Browser erledigen:</p>
+
+  <ul>
+    <li>GAEB-Dateien konvertieren und prüfen</li>
+    <li>Nachträge analysieren und aufbereiten</li>
+    <li>HOAI-Honorare berechnen und nachverfolgen</li>
+    <li>Planunterlagen auf Widersprüche prüfen</li>
+    <li>Projektdokumentation erstellen und teilen</li>
+  </ul>
+
+  <h2>Sicherheit — die berechtigte Frage</h2>
+
+  <p>Die erste Reaktion vieler Planer auf „Cloud" und „Browser" ist: „Und wo liegen meine Daten?" Das ist eine berechtigte Frage, und sie verdient eine ehrliche Antwort.</p>
+
+  <p>Seriöse browserbasierte Tools speichern Daten verschlüsselt auf Servern in der EU — idealerweise in Deutschland. Die Verbindung läuft über HTTPS, Zugangsdaten werden verschlüsselt gespeichert, und Backups erfolgen automatisch. Das ist in den meisten Fällen sicherer als eine lokale Festplatte ohne Backup und mit dem Windows-Passwort „Sommer2024".</p>
+
+  <p>Trotzdem: Bei besonders sensiblen Projektdaten — etwa bei Bauvorhaben mit Geheimhaltungsvereinbarung — muss man prüfen, ob die jeweilige Lösung die Anforderungen erfüllt. Pauschale Ablehnung von Cloud-Lösungen ist genauso falsch wie pauschales Vertrauen.</p>
+
+  <h2>Fazit</h2>
+
+  <p>Plattformunabhängiges Arbeiten ist kein Luxus und kein Trend — es ist eine praktische Notwendigkeit für TGA-Büros, die flexibel arbeiten wollen. Die Technik ist da. Die Frage ist nur, ob man sie nutzt oder weiterhin an den Schreibtisch gefesselt bleibt.</p>
+
+</article>
+
+<div class="article-cta">
+  <div class="cta-box">
+    <h3>TGA-Werkzeuge, die im Browser laufen</h3>
+    <p>GAEB-Konvertierung, Nachtragsprüfung, HOAI-Controlling — auf jedem Gerät, ohne Installation.</p>
+    <a href="/preise">14 Tage kostenlos testen →</a>
+  </div>
+</div>
+
+<div class="back-link">
+  <a href="/blog">← Zurück zur Übersicht</a>
+</div>
+
+<footer>
+  <div class="footer-logo">TGAassist</div>
+  <div class="footer-links">
+    <a href="/datenschutz">Datenschutz</a>
+    <a href="/impressum">Impressum</a>
+    <a href="/agb">AGB</a>
+    <a href="mailto:one@tgaassist.app">Kontakt</a>
+  </div>
+  <div class="footer-copy">© 2026 TGAassist · Alle Preise netto zzgl. 19 % MwSt.</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+</script>
+</body>
+</html>
