@@ -159,7 +159,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
 <!-- Nav -->
 <nav>
   <a href="/" class="nav-logo"><div class="logo-dot"></div>TGAassist</a>
-  <div class="nav-links"><a href="/#tools">Apps</a><a href="/preise">Preise</a><a href="/blog">Blog</a><a href="/#kontakt">Kontakt</a></div>
+  <div class="nav-links"><a href="/#tools">Apps</a><a href="/preise">Preise</a><a href="/#kontakt">Kontakt</a></div>
   <a href="#bundles" class="nav-cta">Pakete vergleichen</a>
 </nav>
 
@@ -349,6 +349,22 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
 
 <div class="divider"></div>
 
+<!-- Stripe Pricing Table -->
+<section style="max-width:900px;margin:0 auto;padding:40px 40px 20px;position:relative;z-index:1">
+  <div class="section-label">Alle Produkte</div>
+  <div class="section-title">Direkt vergleichen &amp; buchen</div>
+  <div class="section-sub">Alle Apps, Bundles und Add-ons auf einen Blick. Promo-Code <strong style="color:#FCD34D">MESSEIFH26</strong> direkt im Checkout eingeben.</div>
+</section>
+<div style="max-width:900px;margin:0 auto;padding:0 40px 40px;position:relative;z-index:1">
+  <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+  <stripe-pricing-table pricing-table-id="prctbl_1TMyZqJhj2O4LRwyJFXkTg5w"
+  publishable-key="pk_live_51Sp4vKJhj2O4LRwyUddN07pAOQCcmzktRFcpTuXABkHftemnalA3WhC2c7duB7uBGz1iZdZVlInPwEreLbJW0lgP000B5dYdwO">
+  </stripe-pricing-table>
+</div>
+
+<div class="divider"></div>
+
+
 <!-- Kostenlose Tools -->
 <section style="max-width:800px;margin:0 auto;padding:40px;position:relative;z-index:1">
   <div class="section-label">Kostenlos</div>
@@ -443,30 +459,33 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px;displ
 </footer>
 
 <script>
-let mode = 'monthly';
+var mode = 'monthly';
 
 function setMode(m) {
   mode = m;
-  const track = document.getElementById('toggleTrack');
-  const lblM = document.getElementById('lblMonthly');
-  const lblY = document.getElementById('lblYearly');
-  const pill = document.getElementById('savePill');
-  const yearly = mode === 'yearly';
+  var track = document.getElementById('toggleTrack');
+  var lblM = document.getElementById('lblMonthly');
+  var lblY = document.getElementById('lblYearly');
+  var pill = document.getElementById('savePill');
+  var yearly = (mode === 'yearly');
 
   track.classList.toggle('yearly', yearly);
   lblM.classList.toggle('active', !yearly);
   lblY.classList.toggle('active', yearly);
   pill.classList.toggle('show', yearly);
 
-  document.querySelectorAll('.price-toggle').forEach(function(el) {
-    el.textContent = yearly ? el.dataset.y : el.dataset.m;
-  });
-  document.querySelectorAll('.yearly-info').forEach(function(el) {
-    el.style.opacity = yearly ? '1' : '0';
-  });
-  document.querySelectorAll('.link-toggle').forEach(function(el) {
-    el.href = yearly ? el.dataset.hrefY : el.dataset.hrefM;
-  });
+  var priceEls = document.querySelectorAll('.price-toggle');
+  for (var i = 0; i < priceEls.length; i++) {
+    priceEls[i].textContent = yearly ? priceEls[i].dataset.y : priceEls[i].dataset.m;
+  }
+  var yearlyEls = document.querySelectorAll('.yearly-info');
+  for (var j = 0; j < yearlyEls.length; j++) {
+    yearlyEls[j].style.opacity = yearly ? '1' : '0';
+  }
+  var linkEls = document.querySelectorAll('.link-toggle');
+  for (var k = 0; k < linkEls.length; k++) {
+    linkEls[k].href = yearly ? linkEls[k].dataset.hrefY : linkEls[k].dataset.hrefM;
+  }
 }
 
 function toggleMode() {
@@ -475,17 +494,18 @@ function toggleMode() {
 
 function toggleFaq(el) {
   var wasOpen = el.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+  var items = document.querySelectorAll('.faq-item');
+  for (var i = 0; i < items.length; i++) {
+    items[i].classList.remove('open');
+  }
   if (!wasOpen) el.classList.add('open');
+}
 
-// Hide messe banner after expiry
-
-// Hide messe banner after expiry
-(function(){
-  var end = new Date("2026-05-04T23:59:59");
+(function() {
+  var end = new Date('2026-05-04T23:59:59');
   if (new Date() > end) {
-    var b = document.getElementById("messeBanner");
-    if (b) b.style.display = "none";
+    var b = document.getElementById('messeBanner');
+    if (b) b.style.display = 'none';
   }
 })();
 </script>
