@@ -77,11 +77,7 @@
     .blog-card p{font-size:13.5px;color:var(--muted);line-height:1.65;flex:1}
     .card-meta{font-size:12px;color:var(--slate);margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
     .card-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(59,130,246,.15);color:var(--blue2);margin-bottom:4px}
-
-    /* COMING SOON */
-    .coming-soon{max-width:1100px;margin:0 auto 80px;padding:0 40px;position:relative;z-index:1}
-    .coming-card{background:var(--ink2);border:1px dashed rgba(255,255,255,.1);border-radius:16px;padding:40px;text-align:center}
-    .coming-card p{color:var(--muted);font-size:14px;margin-top:8px}
+    .card-new{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(16,185,129,.15);color:var(--green);margin-bottom:4px}
 
     /* NEWSLETTER */
     .newsletter{background:var(--ink2);border-top:1px solid var(--line);padding:80px 40px;text-align:center;position:relative;z-index:1}
@@ -105,7 +101,7 @@
     @media(max-width:900px){
       .blog-grid{grid-template-columns:repeat(2,1fr)}
       nav{padding:16px 20px}
-      .blog-hero,.filter-bar,.blog-grid,.coming-soon,.newsletter{padding-left:20px;padding-right:20px}
+      .blog-hero,.filter-bar,.blog-grid,.newsletter{padding-left:20px;padding-right:20px}
     }
     @media(max-width:600px){
       .blog-grid{grid-template-columns:1fr}
@@ -152,54 +148,92 @@
 
 <!-- FILTER -->
 <div class="filter-bar">
-  <button class="filter-btn active">Alle</button>
-  <button class="filter-btn">KI & Digitalisierung</button>
-  <button class="filter-btn">VOB/B & Recht</button>
-  <button class="filter-btn">Heizung & Energie</button>
-  <button class="filter-btn">Arbeitsweise & Tools</button>
+  <button class="filter-btn active" data-cat="alle">Alle</button>
+  <button class="filter-btn" data-cat="ki">KI &amp; Digitalisierung</button>
+  <button class="filter-btn" data-cat="vob">VOB/B &amp; Recht</button>
+  <button class="filter-btn" data-cat="heizung">Heizung &amp; Energie</button>
+  <button class="filter-btn" data-cat="tools">Arbeitsweise &amp; Tools</button>
 </div>
 
 <!-- ARTIKEL GRID -->
-<div class="blog-grid">
+<div class="blog-grid" id="blogGrid">
 
-  <a href="/blog/ki-tga-planung" class="blog-card">
-    <span class="card-cat blue">KI & Digitalisierung</span>
-    <h2>KI in der TGA-Planung — Chancen & Grenzen</h2>
+  <!-- ── NEU Mai 2026 ── -->
+
+  <a href="/blog/ki-tga-planung-entscheidungsfindung-qualitaetssicherung-abstimmung" class="blog-card" data-cat="ki">
+    <span class="card-new">Neu</span>
+    <span class="card-cat blue">KI &amp; Digitalisierung</span>
+    <h2>KI in der TGA-Planung erklärt — Entscheidungsfindung, Qualitätssicherung und Abstimmung</h2>
+    <p>Wie KI in TGA-Büros Entscheidungen vorbereitet, Qualitätssicherung früh verankert und die Gewerkeabstimmung verbessert — technisch erklärt, praxisnah.</p>
+    <div class="card-meta">⏱ 9 Min Lesezeit · Mai 2026</div>
+  </a>
+
+  <a href="/blog/ki-tools-tga-bueros-vergleich" class="blog-card" data-cat="tools">
+    <span class="card-new">Neu</span>
+    <span class="card-cat cyan">Arbeitsweise &amp; Tools</span>
+    <h2>KI-Tools für TGA-Büros im Vergleich — Was leistet TGAassist 2026?</h2>
+    <p>Ein ehrlicher Vergleich: Was können KI-Tools in der TGA-Planung wirklich leisten? Wo liegen die Grenzen — und worauf sollte man bei der Einführung achten?</p>
+    <div class="card-meta">⏱ 8 Min Lesezeit · Mai 2026</div>
+  </a>
+
+  <a href="/blog/tgaassist-2026-ki-planung-abstimmung" class="blog-card" data-cat="ki">
+    <span class="card-new">Neu</span>
+    <span class="card-cat blue">KI &amp; Digitalisierung</span>
+    <h2>TGAassist 2026 — Neue Funktionen für KI-gestützte Planung und Abstimmung</h2>
+    <p>Mehr Komplexität, weniger Zeit, steigende Haftungsanforderungen: Wie TGAassist 2026 mit KI-gestützter Abstimmung und automatisierten GAEB-, VOB- und HOAI-Prozessen antwortet.</p>
+    <div class="card-meta">⏱ 7 Min Lesezeit · Mai 2026</div>
+  </a>
+
+  <a href="/blog/vob-nachtragspruefung-ki" class="blog-card" data-cat="vob">
+    <span class="card-new">Neu</span>
+    <span class="card-cat gold">VOB/B &amp; Recht</span>
+    <h2>VOB/B-konforme Nachtragsprüfung mit KI — so sichern Sie Ihre Honorare ab</h2>
+    <p>Wie TGA-Planungsbüros mit KI-gestützter Nachtragsprüfung Honorare sichern, Haftungsrisiken reduzieren und Prüfprozesse strukturieren. Praxisnah, normkonform.</p>
+    <div class="card-meta">⏱ 8 Min Lesezeit · Mai 2026</div>
+  </a>
+
+  <!-- ── BESTEHENDE ARTIKEL ── -->
+
+  <a href="/blog/ki-tga-planung" class="blog-card" data-cat="ki">
+    <span class="card-cat blue">KI &amp; Digitalisierung</span>
+    <h2>KI in der TGA-Planung — Chancen &amp; Grenzen</h2>
     <p>Was KI heute wirklich kann, wo die Haftungsgrenze liegt — und warum erklärbare KI entscheidend ist.</p>
     <div class="card-meta">⏱ 5 Min Lesezeit · März 2026</div>
   </a>
 
-  <a href="/blog/vob-nachtraege" class="blog-card">
-    <span class="card-cat gold">VOB/B & Recht</span>
+  <a href="/blog/vob-nachtraege" class="blog-card" data-cat="vob">
+    <span class="card-cat gold">VOB/B &amp; Recht</span>
     <h2>VOB/B Nachträge — was Planer wirklich wissen müssen</h2>
     <p>Wann ist ein Nachtrag berechtigt? Welche Fristen gelten? Wie schützt du dich als Planer?</p>
     <div class="card-meta">⏱ 7 Min Lesezeit · März 2026</div>
   </a>
 
-  <a href="/blog/waermepumpe-hydraulischer-abgleich" class="blog-card">
-    <span class="card-cat green">Heizung & Energie</span>
+  <a href="/blog/waermepumpe-hydraulischer-abgleich" class="blog-card" data-cat="heizung">
+    <span class="card-cat green">Heizung &amp; Energie</span>
     <h2>Wärmepumpe und hydraulischer Abgleich</h2>
     <p>Ohne korrekten Abgleich kein effizienter Betrieb. Ein Leitfaden für Planer und Ausführende.</p>
     <div class="card-meta">⏱ 6 Min Lesezeit · Februar 2026</div>
   </a>
 
-  <a href="/blog/plattformunabhaengig-arbeiten" class="blog-card">
-    <span class="card-cat cyan">Arbeitsweise & Tools</span>
+  <a href="/blog/plattformunabhaengig-arbeiten" class="blog-card" data-cat="tools">
+    <span class="card-cat cyan">Arbeitsweise &amp; Tools</span>
     <h2>Plattformunabhängiges Arbeiten im Planungsbüro</h2>
     <p>Warum browserbasierte Tools für TGA-Büros heute der bessere Weg sind — und was dabei zu beachten ist.</p>
     <div class="card-meta">⏱ 4 Min Lesezeit · Februar 2026</div>
   </a>
 
-  <a href="#" class="blog-card">
-    <span class="card-cat blue">KI & Digitalisierung</span>
+  <!-- ── DEMNÄCHST ── -->
+
+  <a href="#" class="blog-card" data-cat="ki">
+    <span class="card-cat blue">KI &amp; Digitalisierung</span>
     <div class="card-badge">Demnächst</div>
     <h2>GAEB DA XML — Versionen, Fallen, Kompatibilität</h2>
     <p>DA83 vs. DA86, Version 3.2 vs. 3.3 — warum das in der Praxis immer wieder Probleme macht.</p>
     <div class="card-meta">⏱ ca. 8 Min Lesezeit · Erscheint bald</div>
   </a>
 
-  <a href="#" class="blog-card">
-    <span class="card-cat gold">VOB/B & Recht</span>
+  <a href="#" class="blog-card" data-cat="vob">
+    <span class="card-cat gold">VOB/B &amp; Recht</span>
     <div class="card-badge">Demnächst</div>
     <h2>Massenermittlung nach REB — Grundlagen für die Praxis</h2>
     <p>Was REB-Aufmaß bedeutet, welche Regeln gelten und wie digitale Tools dabei helfen können.</p>
@@ -243,11 +277,22 @@ document.querySelectorAll('a,button').forEach(el=>{
 const nav = document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
 
-// Filter Buttons
-document.querySelectorAll('.filter-btn').forEach(btn=>{
+// Filter Buttons mit Kategorie-Logik
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.blog-card');
+
+filterBtns.forEach(btn=>{
   btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    filterBtns.forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    cards.forEach(card=>{
+      if(cat === 'alle' || card.dataset.cat === cat){
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
   });
 });
 
