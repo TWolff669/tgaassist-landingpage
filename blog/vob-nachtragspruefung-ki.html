@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>VOB/B-konforme Nachtragsprüfung mit KI — so sichern Sie Ihre Honorare ab | TGAassist Blog</title>
+  <meta name="description" content="Wie TGA-Planungsbüros mit KI-gestützter Nachtragsprüfung nach VOB/B Honorare sichern, Haftungsrisiken reduzieren und Prüfprozesse strukturieren. Praxisnah, normkonform."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--ink:#060D1A;--ink2:#0C1628;--navy:#0F2040;--blue:#3B82F6;--blue2:#60A5FA;--cyan:#22D3EE;--gold:#F59E0B;--green:#10B981;--slate:#64748B;--muted:#94A3B8;--line:rgba(255,255,255,0.07);--white:#FFFFFF;--card:rgba(255,255,255,0.035);--card-h:rgba(255,255,255,0.065)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;line-height:1.7}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.6}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:all .3s ease}
+    nav.scrolled{background:rgba(6,13,26,.9);backdrop-filter:blur(20px);padding:14px 40px;border-bottom:1px solid var(--line)}
+    .nav-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--white);letter-spacing:-.02em;display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-dot{width:8px;height:8px;background:var(--blue);border-radius:50%;box-shadow:0 0 12px var(--blue)}
+    .nav-links{display:flex;align-items:center;gap:32px}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--white)}
+    .nav-cta{font-size:13.5px;font-weight:600;color:var(--white);background:var(--blue);padding:9px 20px;border-radius:8px;text-decoration:none;transition:background .2s}
+    .nav-cta:hover{background:#2563EB}
+
+    .article-header{padding:160px 40px 48px;max-width:780px;margin:0 auto;position:relative;z-index:1}
+    .article-cat{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:16px}
+    .article-header h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4.5vw,48px);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin-bottom:20px}
+    .article-meta{font-size:13px;color:var(--slate);display:flex;gap:20px;flex-wrap:wrap}
+
+    .hero-image{max-width:780px;margin:0 auto 0;padding:0 40px;position:relative;z-index:1}
+    .hero-image img{width:100%;border-radius:16px;display:block;border:1px solid var(--line)}
+
+    .article-body{max-width:720px;margin:0 auto;padding:0 40px 80px;position:relative;z-index:1}
+
+    .tldr-box{background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.2);border-radius:12px;padding:24px 28px;margin:40px 0 32px}
+    .tldr-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue2);margin-bottom:10px}
+    .tldr-box p{font-size:14.5px;color:rgba(255,255,255,.75);line-height:1.75;margin:0}
+
+    .article-body p{font-size:16px;color:rgba(255,255,255,.82);line-height:1.8;margin-bottom:24px}
+    .article-body h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin:48px 0 16px;letter-spacing:-.01em;color:var(--white)}
+    .article-body h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin:36px 0 12px;color:var(--blue2)}
+    .article-body ul,.article-body ol{margin:0 0 24px 20px;color:rgba(255,255,255,.82)}
+    .article-body li{margin-bottom:8px;font-size:16px;line-height:1.7}
+    .article-body blockquote{border-left:3px solid var(--blue);padding:16px 24px;margin:32px 0;background:rgba(59,130,246,.06);border-radius:0 8px 8px 0}
+    .article-body blockquote p{margin:0;font-style:italic;color:var(--blue2)}
+    .article-body strong{color:var(--white)}
+    .article-body a{color:var(--blue2);text-decoration:underline;text-decoration-color:rgba(96,165,250,.3);transition:color .2s}
+    .article-body a:hover{color:var(--white)}
+
+    .table-caption{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue2);margin-bottom:12px;margin-top:32px}
+    .table-wrap{overflow-x:auto;margin-bottom:32px}
+    table{width:100%;border-collapse:collapse;font-size:14.5px}
+    thead tr{background:rgba(59,130,246,.1)}
+    th{text-align:left;padding:12px 16px;color:var(--blue2);font-weight:600;border-bottom:1px solid rgba(59,130,246,.2);font-size:13px}
+    td{padding:11px 16px;border-bottom:1px solid var(--line);color:rgba(255,255,255,.78);vertical-align:top}
+    tr:last-child td{border-bottom:none}
+    tr:hover td{background:var(--card-h)}
+
+    .faq-section{margin-top:8px}
+    .faq-item{border-bottom:1px solid var(--line);padding:22px 0}
+    .faq-item:last-child{border-bottom:none}
+    .faq-q{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px}
+    .faq-a{font-size:15.5px;color:rgba(255,255,255,.75);line-height:1.75}
+
+    .article-cta{max-width:720px;margin:0 auto 80px;padding:0 40px;position:relative;z-index:1}
+    .cta-box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:40px;text-align:center}
+    .cta-box h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px}
+    .cta-box p{color:var(--muted);font-size:14px;margin-bottom:24px}
+    .cta-box a{background:var(--blue);color:var(--white);padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s}
+    .cta-box a:hover{background:#2563EB}
+
+    .back-link{max-width:720px;margin:0 auto;padding:0 40px 60px;position:relative;z-index:1}
+    .back-link a{font-size:14px;color:var(--blue2);text-decoration:none;transition:color .2s}
+    .back-link a:hover{color:var(--white)}
+
+    footer{background:var(--ink);border-top:1px solid var(--line);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;position:relative;z-index:1}
+    .footer-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;letter-spacing:-.02em}
+    .footer-links{display:flex;gap:28px}
+    .footer-links a{font-size:13px;color:var(--slate);text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:var(--white)}
+    .footer-copy{font-size:12.5px;color:var(--slate)}
+
+    @media(max-width:600px){
+      nav{padding:16px 20px}.nav-links{display:none}
+      .article-header,.hero-image,.article-body,.article-cta,.back-link{padding-left:20px;padding-right:20px}
+      footer{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo"><div class="logo-dot"></div>TGAassist</a>
+  <div class="nav-links">
+    <a href="/#tools">Apps</a>
+    <a href="/#wie">Wie es funktioniert</a>
+    <a href="/preise">Preise</a>
+    <a href="/blog">Blog</a>
+    <a href="/#kontakt">Kontakt</a>
+  </div>
+  <a href="/preise" class="nav-cta">Jetzt starten →</a>
+</nav>
+
+<header class="article-header">
+  <div class="article-cat">VOB/B &amp; Recht</div>
+  <h1>VOB/B-konforme Nachtragsprüfung mit KI — so sichern Sie Ihre Honorare ab</h1>
+  <div class="article-meta">
+    <span>✍ Thomas Wolff</span>
+    <span>📅 Mai 2026</span>
+    <span>⏱ 8 Min Lesezeit</span>
+  </div>
+</header>
+
+<div class="hero-image">
+  <img
+    src="/blog/images/vob-b-konforme-nachtragspr-fung-mit-ki-so-sichern-sie-ihre-h-901144.webp"
+    alt="TGA-Planungsbüro mit KI-gestützter Nachtragsprüfung an modernen Workstations"
+    width="780"
+    height="440"
+    loading="eager"
+  />
+</div>
+
+<article class="article-body">
+
+  <div class="tldr-box">
+    <div class="tldr-label">TL;DR — Kurzfassung</div>
+    <p>Die VOB/B-konforme Nachtragsprüfung ist für TGA-Planungsbüros entscheidend, um Haftungsrisiken zu reduzieren, Diskussionen zu vermeiden und Honorare sauber abzusichern. KI-gestützte Werkzeuge sparen erheblich Zeit, machen Prüfungen nachvollziehbarer und verbessern die Dokumentation — ersetzen aber nicht die fachliche Verantwortung des Planers. Büros, die ihre Nachtragsprüfung digitalisieren, stärken ihre Prozesse, sichern ihre Erlöse und sind besser auf zukünftige Anforderungen vorbereitet.</p>
+  </div>
+
+  <p>Die Nachtragsprüfung ist für viele Ingenieurbüros und Planungsbüros der Technischen Gebäudeausrüstung ein echtes Sorgenkind. Sie kostet Zeit. Sie birgt Haftungsrisiken. Und sie führt immer wieder zu Diskussionen über Honorare. Außerdem steigen die Anforderungen aus der VOB/B, von Auftraggebern und aus der eigenen Verantwortung als TGA-Planer. Genau hier setzt die KI-gestützte Nachtragsprüfung an.</p>
+
+  <p>Viele Büros arbeiten noch mit Excel-Listen, E-Mails und manuellen Prüfvermerken. Das ist verständlich, aber riskant. Denn Nachträge nach VOB/B müssen sauber begründet, rechnerisch korrekt und vollständig dokumentiert sein. Fehler führen schnell zu Honorarkürzungen oder sogar zu Haftungsfragen. KI kann diese Prozesse unterstützen, ohne die fachliche Entscheidung zu ersetzen.</p>
+
+  <p>In diesem Artikel erfahren Sie, wie eine VOB/B-konforme Nachtragsprüfung mit KI funktioniert, wie sie Ihre Honorarberechnung absichert und warum gerade TGA-Planungsbüros davon profitieren. Wir schauen auf rechtliche Grundlagen, typische Fehler, praktische Abläufe und die Rolle moderner Software wie <a href="https://tgaassist.app/">TGAassist</a>. Ziel ist ein klarer, praxisnaher Überblick, den Sie direkt in Ihrem Büroalltag nutzen können.</p>
+
+  <h2>Warum die Nachtragsprüfung nach VOB/B so kritisch ist</h2>
+
+  <p>Nachträge sind im Baualltag normal. Gerade in der Technischen Gebäudeausrüstung ändern sich Leistungen häufig während der Ausführung. Neue Anforderungen, geänderte Leitungsführungen oder zusätzliche Technik führen zu Mehrleistungen. Die VOB/B regelt genau, wie diese Leistungen zu vergüten sind. Entscheidend sind dabei § 2 Abs. 5 und 6 VOB/B.</p>
+
+  <p>Das Problem: Die Nachtragsprüfung ist komplex. Sie basiert auf der Urkalkulation, verlangt neue Einheitspreise und eine saubere Kostenlogik. Viele Planungsbüros unterschätzen den Aufwand oder prüfen nur oberflächlich. Das rächt sich später. Öffentliche Auftraggeber prüfen streng. Private Bauherren orientieren sich zunehmend daran.</p>
+
+  <p>Aktuelle Zahlen zeigen, dass das Bauwesen bei der Digitalisierung noch hinterherhinkt — und gleichzeitig liegt hier ein großes Potenzial für Effizienz und Qualität.</p>
+
+  <div class="table-caption">Digitalisierung und KI im Bauwesen</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Kennzahl</th><th>Wert</th><th>Jahr</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Unternehmen mit KI-Einsatz in Deutschland</td><td>26 %</td><td>2025</td></tr>
+        <tr><td>KI-Nutzung im Baugewerbe</td><td>11 %</td><td>2025</td></tr>
+        <tr><td>Mögliche Kostensenkung durch KI</td><td>bis zu 10 %</td><td>2024, 2025</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Diese Zahlen machen deutlich: Wer heute in KI-gestützte Prozesse investiert, verschafft sich einen echten Vorsprung. Gerade bei der Nachtragsprüfung, die viel Fachwissen und Zeit bindet, kann Automatisierung entlasten.</p>
+
+  <h2>VOB/B-konforme Nachtragsprüfung — Schritt für Schritt</h2>
+
+  <p>Eine saubere Nachtragsprüfung folgt immer einem klaren Ablauf. KI kann diesen Ablauf strukturieren und unterstützen. Die Verantwortung bleibt beim Ingenieur, aber viele Routinen lassen sich automatisieren.</p>
+
+  <p><strong>Schritt 1 — Formale Prüfung:</strong> Liegt eine Anordnung oder Beauftragung vor? Ist der Nachtrag eindeutig beschrieben? Fehlen Unterlagen, weist ein KI-System frühzeitig darauf hin — das spart Rückfragen und Verzögerungen.</p>
+
+  <p><strong>Schritt 2 — Inhaltliche Prüfung nach VOB/B:</strong> Die neue Leistung wird mit der Urkalkulation abgeglichen. Einheitspreise werden angepasst oder neu gebildet. KI kann hier Kostenpositionen vergleichen, Abweichungen markieren und Rechenfehler erkennen.</p>
+
+  <p><strong>Schritt 3 — Dokumentation:</strong> Jede Entscheidung muss nachvollziehbar sein — das ist entscheidend für die Honorarberechnung und die Haftungssicherheit. Eine KI-gestützte Lösung erstellt automatisch Prüfvermerke, Versionsstände und strukturierte Nachweise.</p>
+
+  <p>Für Planungsbüros bedeutet das: weniger manuelle Arbeit, mehr Klarheit und eine bessere Argumentationsbasis gegenüber Auftraggebern. Die Nachtragsprüfung wird vom Stressfaktor zum kontrollierten Prozess.</p>
+
+  <h2>Honorare sichern durch nachvollziehbare Honorarberechnung</h2>
+
+  <p>Ein oft unterschätzter Punkt ist die eigene Vergütung. Die Prüfung von Nachträgen ist keine Grundleistung nach HOAI. Sie gilt in der Regel als besondere Leistung — trotzdem wird sie im Alltag häufig ohne klare Honorarregelung erbracht.</p>
+
+  <p>Das Problem ist nicht die Leistung selbst, sondern der fehlende Nachweis. Ohne Dokumentation ist eine Honorarberechnung schwer durchsetzbar. Auftraggeber fragen dann: Was genau haben Sie geprüft? Wie aufwendig war das wirklich?</p>
+
+  <p>Hier spielt KI ihre Stärke aus. Jeder Prüfschritt wird festgehalten. Zeiten, Inhalte und Entscheidungen sind nachvollziehbar dokumentiert. Damit schaffen Sie eine belastbare Grundlage für Ihre Honorarberechnung.</p>
+
+  <p>Typische Vorteile für Ingenieurbüros:</p>
+  <ul>
+    <li>Klare Abgrenzung zwischen Grundleistungen und besonderen Leistungen</li>
+    <li>Nachvollziehbare Leistungsnachweise für Auftraggeber</li>
+    <li>Bessere Position in Honorarverhandlungen</li>
+  </ul>
+
+  <p>In der Praxis berichten viele TGA-Planer von einer deutlichen Entlastung. Sie können ihre Leistung sachlich belegen — das schafft Vertrauen und reduziert Konflikte.</p>
+
+  <h2>Typische Fehler in der Nachtragsprüfung — und wie KI hilft</h2>
+
+  <p>In vielen Planungsbüros wiederholen sich die gleichen Fehler. Sie entstehen nicht aus Unwissen, sondern aus Zeitdruck. Genau hier kann Automatisierung unterstützen.</p>
+
+  <p>Ein häufiger Fehler ist die unvollständige Prüfung: Einzelne Positionen werden übernommen, ohne die Kostenlogik zu hinterfragen. KI-Systeme prüfen konsequent jede Position gegen definierte Regeln.</p>
+
+  <p>Ein weiterer Fehler ist die fehlende Bezugnahme auf die Urkalkulation. Gerade bei älteren Projekten sind diese Daten schwer auffindbar — digitale Systeme halten alle Informationen zentral verfügbar.</p>
+
+  <p>Darüber hinaus wird die Dokumentation oft vernachlässigt. Prüfvermerke liegen in E-Mails oder handschriftlichen Notizen. Im Streitfall ist das problematisch. KI-gestützte Nachtragsprüfung sorgt für eine saubere, durchgängige Dokumentation.</p>
+
+  <div class="table-caption">Häufige Fehler und KI-Lösungen</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Fehler</th><th>Risiko</th><th>KI-Unterstützung</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Unvollständige Prüfung</td><td>Honorarkürzung</td><td>Automatische Vollständigkeitschecks</td></tr>
+        <tr><td>Fehlende Urkalkulation</td><td>Falsche Einheitspreise</td><td>Zentraler Datenabgleich</td></tr>
+        <tr><td>Schwache Dokumentation</td><td>Haftungsrisiko</td><td>Automatische Prüfprotokolle</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Diese Übersicht zeigt: KI ersetzt keine fachliche Entscheidung. Sie sorgt aber dafür, dass keine grundlegenden Punkte übersehen werden.</p>
+
+  <h2>Zukunftstrends für TGA-Planungsbüros</h2>
+
+  <p>Die Anforderungen an Planungsbüros steigen weiter. Öffentliche Auftraggeber verlangen strukturierte, prüfbare Unterlagen. Gleichzeitig wächst der wirtschaftliche Druck — mehr Leistung bei gleichem Honorar ist keine Seltenheit.</p>
+
+  <p>Ein klarer Trend ist die Standardisierung der Nachtragsprüfung. Einheitliche Abläufe, klare Prüfkriterien und digitale Dokumentation werden zum Normalfall. KI unterstützt dabei, diese Standards einzuhalten.</p>
+
+  <p>Ein weiterer Trend ist die Haftungsverschiebung. Planer werden stärker in die Verantwortung genommen. Eine mangelhafte Nachtragsprüfung kann als Mitverschulden gewertet werden. Digitale Prozesse erhöhen hier die Sicherheit.</p>
+
+  <p>Für TGA-Planer bedeutet das: Wer frühzeitig auf KI-gestützte Werkzeuge setzt, ist besser vorbereitet. Es geht nicht um Technik um der Technik willen — sondern um stabile, wirtschaftliche Prozesse.</p>
+
+  <h2>Umsetzung im Büroalltag mit digitalen Werkzeugen</h2>
+
+  <p>Der Einstieg in die KI-gestützte Nachtragsprüfung muss kein Großprojekt sein. Wichtig ist ein pragmatischer Ansatz: Beginnen Sie mit klar definierten Prozessen. Welche Nachträge prüfen Sie regelmäßig? Welche Daten liegen bereits digital vor?</p>
+
+  <p>Moderne, browserbasierte Lösungen wie <a href="https://tgaassist.app/">TGAassist</a> lassen sich ohne große IT-Hürden nutzen. Sie unterstützen bei der VOB/B-Nachtragsprüfung, der GAEB-Konvertierung und der Honorarberechnung — besonders interessant für kleine und mittlere Planungsbüros.</p>
+
+  <p>Wichtig ist die Akzeptanz im Team. KI soll unterstützen, nicht kontrollieren. Schulungen und klare Regeln helfen dabei. Viele Büros berichten, dass sich die Zeitersparnis bereits nach wenigen Projekten deutlich zeigt.</p>
+
+  <p>Am Ende steht ein klarer Nutzen: mehr Zeit für Planung, weniger Streit über Nachträge und eine bessere Absicherung der eigenen Honorare.</p>
+
+  <h2>Häufig gestellte Fragen</h2>
+
+  <div class="faq-section">
+    <div class="faq-item">
+      <div class="faq-q">Was bedeutet VOB/B-konforme Nachtragsprüfung konkret?</div>
+      <div class="faq-a">Sie bedeutet, dass Nachträge nach den Vorgaben der VOB/B geprüft werden. Grundlage sind die Urkalkulation, neue Einheitspreise und eine nachvollziehbare Dokumentation aller Prüfschritte.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Ist die Nachtragsprüfung eine besondere Leistung nach HOAI?</div>
+      <div class="faq-a">Ja. Die Prüfung von Nachträgen zählt in der Regel nicht zu den Grundleistungen. Sie kann als besondere Leistung vergütet werden, wenn ein entsprechender Auftrag vorliegt.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Kann KI die fachliche Prüfung ersetzen?</div>
+      <div class="faq-a">Nein. KI unterstützt den Prozess, übernimmt aber keine fachliche Verantwortung. Die Entscheidung bleibt immer beim Ingenieur oder TGA-Planer.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Wie hoch ist die Zeitersparnis durch KI-gestützte Nachtragsprüfung?</div>
+      <div class="faq-a">Viele Büros berichten von einer Reduktion des manuellen Aufwands um 60 bis 70 %. Das hängt stark vom Projekt und vom Digitalisierungsgrad ab.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Für welche Büros lohnt sich der Einsatz besonders?</div>
+      <div class="faq-a">Vor allem für Ingenieurbüros und Planungsbüros der Technischen Gebäudeausrüstung mit vielen Nachträgen. Auch kleinere Büros profitieren von klaren, haftungssicheren Prozessen.</div>
+    </div>
+  </div>
+
+  <h2>Jetzt die eigenen Prozesse stärken</h2>
+
+  <p>Die VOB/B-konforme Nachtragsprüfung ist kein lästiges Übel, sondern ein zentrales Instrument zur Honorarsicherung. Wer sie sauber, strukturiert und nachvollziehbar durchführt, schützt nicht nur sich selbst, sondern steigert auch die Qualität der Projekte.</p>
+
+  <p>KI bietet hier eine echte Chance. Sie bringt Ordnung in komplexe Abläufe, spart Zeit und schafft Transparenz. Für TGA-Planungsbüros in Deutschland, Österreich und der Schweiz ist das ein wichtiger Schritt in Richtung Digitale Transformation.</p>
+
+  <p>Entscheidend ist, jetzt zu handeln und die eigenen Prozesse aktiv zu gestalten. So sichern Sie Ihre Honorare und gewinnen wertvolle Zeit für das, was wirklich zählt: gute Planung.</p>
+
+</article>
+
+<div class="article-cta">
+  <div class="cta-box">
+    <h3>Nachtrag Navigator — 14 Tage kostenlos testen</h3>
+    <p>VOB/B-konforme Nachtragsprüfung mit KI-Unterstützung. Browserbasiert, ohne Installation, sofort einsatzbereit.</p>
+    <a href="/preise">Jetzt testen →</a>
+  </div>
+</div>
+
+<div class="back-link">
+  <a href="/blog">← Zurück zur Übersicht</a>
+</div>
+
+<footer>
+  <div class="footer-logo">TGAassist</div>
+  <div class="footer-links">
+    <a href="/datenschutz">Datenschutz</a>
+    <a href="/impressum">Impressum</a>
+    <a href="/agb">AGB</a>
+    <a href="mailto:one@tgaassist.app">Kontakt</a>
+  </div>
+  <div class="footer-copy">© 2026 TGAassist · Alle Preise netto zzgl. 19 % MwSt.</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+</script>
+</body>
+</html>

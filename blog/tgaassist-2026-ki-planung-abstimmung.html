@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>TGAassist 2026 — Neue Funktionen für KI-gestützte Planung und Abstimmung | TGAassist Blog</title>
+  <meta name="description" content="TGAassist 2026 bringt KI-gestützte Abstimmung, automatisierte GAEB-, VOB- und HOAI-Prozesse und praxisnahe Digitalisierung für TGA-Planungsbüros im DACH-Raum."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--ink:#060D1A;--ink2:#0C1628;--navy:#0F2040;--blue:#3B82F6;--blue2:#60A5FA;--cyan:#22D3EE;--gold:#F59E0B;--green:#10B981;--slate:#64748B;--muted:#94A3B8;--line:rgba(255,255,255,0.07);--white:#FFFFFF;--card:rgba(255,255,255,0.035);--card-h:rgba(255,255,255,0.065)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;line-height:1.7}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.6}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:all .3s ease}
+    nav.scrolled{background:rgba(6,13,26,.9);backdrop-filter:blur(20px);padding:14px 40px;border-bottom:1px solid var(--line)}
+    .nav-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--white);letter-spacing:-.02em;display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-dot{width:8px;height:8px;background:var(--blue);border-radius:50%;box-shadow:0 0 12px var(--blue)}
+    .nav-links{display:flex;align-items:center;gap:32px}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--white)}
+    .nav-cta{font-size:13.5px;font-weight:600;color:var(--white);background:var(--blue);padding:9px 20px;border-radius:8px;text-decoration:none;transition:background .2s}
+    .nav-cta:hover{background:#2563EB}
+
+    .article-header{padding:160px 40px 48px;max-width:780px;margin:0 auto;position:relative;z-index:1}
+    .article-cat{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:16px}
+    .article-header h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4.5vw,48px);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin-bottom:20px}
+    .article-meta{font-size:13px;color:var(--slate);display:flex;gap:20px;flex-wrap:wrap}
+
+    .hero-image{max-width:780px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
+    .hero-image img{width:100%;border-radius:16px;display:block;border:1px solid var(--line)}
+
+    .article-body{max-width:720px;margin:0 auto;padding:0 40px 80px;position:relative;z-index:1}
+
+    .tldr-box{background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.2);border-radius:12px;padding:24px 28px;margin:40px 0 32px}
+    .tldr-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue2);margin-bottom:10px}
+    .tldr-box p{font-size:14.5px;color:rgba(255,255,255,.75);line-height:1.75;margin:0}
+
+    .article-body p{font-size:16px;color:rgba(255,255,255,.82);line-height:1.8;margin-bottom:24px}
+    .article-body h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin:48px 0 16px;letter-spacing:-.01em;color:var(--white)}
+    .article-body h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin:36px 0 12px;color:var(--blue2)}
+    .article-body ul,.article-body ol{margin:0 0 24px 20px;color:rgba(255,255,255,.82)}
+    .article-body li{margin-bottom:8px;font-size:16px;line-height:1.7}
+    .article-body blockquote{border-left:3px solid var(--blue);padding:16px 24px;margin:32px 0;background:rgba(59,130,246,.06);border-radius:0 8px 8px 0}
+    .article-body blockquote p{margin:0;font-style:italic;color:var(--blue2)}
+    .article-body strong{color:var(--white)}
+    .article-body a{color:var(--blue2);text-decoration:underline;text-decoration-color:rgba(96,165,250,.3);transition:color .2s}
+    .article-body a:hover{color:var(--white)}
+
+    .table-caption{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue2);margin-bottom:12px;margin-top:32px}
+    .table-wrap{overflow-x:auto;margin-bottom:32px}
+    table{width:100%;border-collapse:collapse;font-size:14.5px}
+    thead tr{background:rgba(59,130,246,.1)}
+    th{text-align:left;padding:12px 16px;color:var(--blue2);font-weight:600;border-bottom:1px solid rgba(59,130,246,.2);font-size:13px}
+    td{padding:11px 16px;border-bottom:1px solid var(--line);color:rgba(255,255,255,.78);vertical-align:top}
+    tr:last-child td{border-bottom:none}
+    tr:hover td{background:var(--card-h)}
+
+    .faq-section{margin-top:8px}
+    .faq-item{border-bottom:1px solid var(--line);padding:22px 0}
+    .faq-item:last-child{border-bottom:none}
+    .faq-q{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px}
+    .faq-a{font-size:15.5px;color:rgba(255,255,255,.75);line-height:1.75}
+
+    .article-cta{max-width:720px;margin:0 auto 80px;padding:0 40px;position:relative;z-index:1}
+    .cta-box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:40px;text-align:center}
+    .cta-box h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px}
+    .cta-box p{color:var(--muted);font-size:14px;margin-bottom:24px}
+    .cta-box a{background:var(--blue);color:var(--white);padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s}
+    .cta-box a:hover{background:#2563EB}
+
+    .back-link{max-width:720px;margin:0 auto;padding:0 40px 60px;position:relative;z-index:1}
+    .back-link a{font-size:14px;color:var(--blue2);text-decoration:none;transition:color .2s}
+    .back-link a:hover{color:var(--white)}
+
+    footer{background:var(--ink);border-top:1px solid var(--line);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;position:relative;z-index:1}
+    .footer-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;letter-spacing:-.02em}
+    .footer-links{display:flex;gap:28px}
+    .footer-links a{font-size:13px;color:var(--slate);text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:var(--white)}
+    .footer-copy{font-size:12.5px;color:var(--slate)}
+
+    @media(max-width:600px){
+      nav{padding:16px 20px}.nav-links{display:none}
+      .article-header,.hero-image,.article-body,.article-cta,.back-link{padding-left:20px;padding-right:20px}
+      footer{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo"><div class="logo-dot"></div>TGAassist</a>
+  <div class="nav-links">
+    <a href="/#tools">Apps</a>
+    <a href="/#wie">Wie es funktioniert</a>
+    <a href="/preise">Preise</a>
+    <a href="/blog">Blog</a>
+    <a href="/#kontakt">Kontakt</a>
+  </div>
+  <a href="/preise" class="nav-cta">Jetzt starten →</a>
+</nav>
+
+<header class="article-header">
+  <div class="article-cat">KI &amp; Digitalisierung</div>
+  <h1>TGAassist 2026 — Neue Funktionen für KI-gestützte Planung und Abstimmung</h1>
+  <div class="article-meta">
+    <span>✍ Thomas Wolff</span>
+    <span>📅 Mai 2026</span>
+    <span>⏱ 7 Min Lesezeit</span>
+  </div>
+</header>
+
+<div class="hero-image">
+  <img
+    src="/blog/images/tgaassist-2026-neue-funktionen-f-r-ki-gest-tzte-planung-und--734363.webp"
+    alt="TGA-Planungsteam bei der digitalen Gewerkeabstimmung mit KI-gestützter Software"
+    width="780"
+    height="440"
+    loading="eager"
+  />
+</div>
+
+<article class="article-body">
+
+  <div class="tldr-box">
+    <div class="tldr-label">TL;DR — Kurzfassung</div>
+    <p>TGAassist 2026 zeigt, warum KI und Digitalisierung für die TGA-Planung unverzichtbar werden: steigende Komplexität, Zeitdruck und Haftungsanforderungen lassen sich ohne digitale Unterstützung kaum noch bewältigen. Die Plattform setzt auf KI-gestützte Abstimmung als Kernfunktion und automatisiert zentrale Prozesse rund um GAEB, VOB und HOAI. Praxisbeispiele zeigen, dass Planungsbüros effizienter arbeiten, besser dokumentieren und schneller zu belastbaren Ergebnissen kommen — auch ohne vollständiges BIM-Setup.</p>
+  </div>
+
+  <p>Die Planung der Technischen Gebäudeausrüstung wird immer komplexer. Mehr Normen. Mehr Beteiligte. Weniger Zeit. Gleichzeitig wächst der Druck, Projekte wirtschaftlich, sauber dokumentiert und haftungssicher umzusetzen. Viele Ingenieur- und Planungsbüros im DACH-Raum kennen dieses Gefühl nur zu gut. Genau hier setzt TGAassist 2026 an.</p>
+
+  <p>Die neue Version der Plattform bringt KI-gestützte Planung und KI-gestützte Abstimmung näher an den Arbeitsalltag von TGA-Planern — nicht als theoretisches Zukunftsversprechen, sondern als praktisches Werkzeug. Im Fokus stehen echte Zeitersparnis, bessere Zusammenarbeit und eine klare Struktur in allen Phasen der TGA-Planung.</p>
+
+  <p>In diesem Artikel schauen wir uns an, warum Digitalisierung in der TGA jetzt entscheidend ist, welche neuen Funktionen TGAassist 2026 bietet und wie Ingenieurbüros davon konkret profitieren. Wir sprechen über KI-gestützte Abstimmung zwischen Gewerken, typische Fehler in GAEB- und HOAI-Prozessen und darüber, wie sich Haftungsrisiken durch digitale Prozesse reduzieren lassen.</p>
+
+  <h2>Warum KI und Digitalisierung in der TGA-Planung 2026 unverzichtbar sind</h2>
+
+  <p>Die Bau- und Planungsbranche befindet sich mitten im Wandel. Digitalisierung ist kein Zusatz mehr, sondern Voraussetzung für Wettbewerbsfähigkeit. Gerade in der Technischen Gebäudeausrüstung zeigen aktuelle Zahlen, wie stark der Einsatz von KI bereits voranschreitet. Hinzu kommen steigende Anforderungen aus Nachhaltigkeit, Energieeffizienz und Förderprogrammen, die ohne digitale Unterstützung kaum noch beherrschbar sind.</p>
+
+  <p>Viele Unternehmen nutzen KI nicht nur für Entwürfe, sondern zunehmend auch in der Planungsphase. Der Grund ist einfach: Manuelle Prozesse kosten Zeit — Zeit, die im Projektbudget oft nicht mehr vorhanden ist. Gleichzeitig steigt der Anspruch an Dokumentation, Nachvollziehbarkeit und Normkonformität. Prüfpflichten, Schnittstellenkoordination und Haftungsfragen lassen sich manuell kaum noch zuverlässig abdecken.</p>
+
+  <div class="table-caption">Aktuelle Kennzahlen zur KI-Nutzung in Bau und TGA</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Kennzahl</th><th>Wert</th><th>Region</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Unternehmen im Bauwesen mit KI-Einsatz</td><td>74 %</td><td>Deutschland</td></tr>
+        <tr><td>KI-Einsatz in der Planungsphase</td><td>42 %</td><td>Deutschland</td></tr>
+        <tr><td>Geplante Erhöhung der KI-Investitionen bis 2030</td><td>84 %</td><td>DACH</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Diese Entwicklung zeigt klar: Wer 2026 effizient arbeiten will, braucht digitale Werkzeuge, die sich an reale Planungsabläufe anpassen. TGAassist 2026 unterstützt Planungsbüros dabei, Routineaufgaben zu automatisieren und den Fokus wieder auf technische Qualität, Koordination und strategische Projektsteuerung zu legen. Weitere Informationen finden Sie auf der <a href="https://tgaassist.app/">offiziellen Website von TGAassist</a>.</p>
+
+  <h2>KI-gestützte Abstimmung als Kernfunktion</h2>
+
+  <p>Ein zentrales Thema in der TGA-Planung ist die Abstimmung zwischen den Gewerken. Heizung, Lüftung, Sanitär, Elektro und MSR müssen sauber zusammenarbeiten. In der Praxis passiert das oft über E-Mails, PDFs und Versionen, die schnell unübersichtlich werden. Gerade bei Änderungen entsteht so ein hohes Risiko für Inkonsistenzen.</p>
+
+  <p>TGAassist 2026 setzt hier auf KI-gestützte Abstimmung. Die Software erkennt Zusammenhänge zwischen Planungsständen, Leistungsverzeichnissen und Berechnungen. Änderungen werden nachvollziehbar dokumentiert. Konflikte zwischen Gewerken lassen sich früher erkennen — bevor sie auf der Baustelle zu Mehrkosten führen.</p>
+
+  <p>Der Ablauf ist bewusst einfach gehalten: Planungsdaten werden zentral verarbeitet. Die KI analysiert Abweichungen, fehlende Angaben oder widersprüchliche Positionen und gibt klare Hinweise, wo Handlungsbedarf besteht. Das spart Rückfragen, reduziert Abstimmungsrunden und beschleunigt Freigabeprozesse deutlich.</p>
+
+  <p>Besonders hilfreich ist das bei größeren Projekten mit vielen Beteiligten. Statt langer Abstimmungsrunden gibt es eine gemeinsame Datenbasis. Entscheidungen werden transparent — das stärkt die Zusammenarbeit, verbessert die Kommunikation mit Fachplanern und reduziert nachhaltig das Risiko von Planungsfehlern.</p>
+
+  <h2>Automatisierung von GAEB-, VOB- und HOAI-Prozessen</h2>
+
+  <p>Viele Planungsbüros verlieren täglich wertvolle Zeit durch manuelle Prüfungen. GAEB-Dateien werden mehrfach konvertiert. Nachträge nach VOB werden händisch geprüft. HOAI-Honorare werden in Tabellen nachgerechnet. Diese Tätigkeiten sind fehleranfällig und binden hochqualifizierte Fachkräfte unnötig lange.</p>
+
+  <p>TGAassist 2026 bietet KI-gestützte Funktionen für genau diese Aufgaben. GAEB-Konvertierungen laufen strukturiert und prüfbar ab. Die Software erkennt formale Fehler und fehlende Positionen frühzeitig. Bei der VOB-Nachtragsprüfung unterstützt die KI bei der Bewertung von Änderungen, Mengenverschiebungen und deren wirtschaftlichen Auswirkungen.</p>
+
+  <p>Auch die HOAI-Honorarberechnung wird deutlich vereinfacht. Eingaben sind klar geführt. Ergebnisse werden nachvollziehbar dokumentiert — das ist nicht nur schneller, sondern auch wichtig für die Haftungssicherheit und für Gespräche mit Auftraggebern oder Prüfern.</p>
+
+  <p>Ein häufiger Fehler in der Praxis ist fehlende Dokumentation: Entscheidungen werden getroffen, aber nicht sauber festgehalten. Digitale Prozesse mit KI-Unterstützung sorgen hier für Struktur, Versionierung und Nachvollziehbarkeit. Jeder Schritt bleibt dokumentiert — das schützt das Büro im Streitfall und schafft internes Vertrauen.</p>
+
+  <h2>Praxisbeispiele: So profitieren TGA-Planungsbüros konkret</h2>
+
+  <p>Der Nutzen von TGAassist 2026 zeigt sich besonders im Alltag. Ein mittelgroßes Ingenieurbüro mit mehreren parallelen Projekten steht oft vor ähnlichen Herausforderungen: Termine überschneiden sich, Rückfragen häufen sich, kleine Fehler summieren sich und wirken sich direkt auf Wirtschaftlichkeit und Nervenbelastung aus.</p>
+
+  <p>Durch den Einsatz von KI-gestützter Planung lassen sich viele dieser Probleme reduzieren. Routineaufgaben werden automatisiert. Die Abstimmung zwischen Gewerken läuft strukturierter. Planer haben mehr Zeit für technische Entscheidungen, Variantenvergleiche und Qualitätssicherung.</p>
+
+  <div class="table-caption">Vergleich klassischer Abläufe und KI-gestützter Prozesse</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Bereich</th><th>Vorher</th><th>Mit TGAassist 2026</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Abstimmungsaufwand</td><td>Viele E-Mails und Meetings</td><td>Zentrale digitale Abstimmung</td></tr>
+        <tr><td>GAEB-Prüfung</td><td>Manuell und fehleranfällig</td><td>Automatisiert und prüfbar</td></tr>
+        <tr><td>Dokumentation</td><td>Uneinheitlich</td><td>Durchgängig strukturiert</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Wichtig ist dabei, typische Fehler zu vermeiden. KI ist kein Ersatz für Fachwissen — sie ist ein Werkzeug. Planer müssen Ergebnisse prüfen und bewerten. TGAassist 2026 ist deshalb so aufgebaut, dass Entscheidungen nachvollziehbar bleiben, Prüfpfade sichtbar sind und die Software nicht als Blackbox wirkt. Weitere Anwendungsbeispiele finden Sie im <a href="https://tgaassist.app/blog">TGAassist Blog</a>.</p>
+
+  <h2>Zukunftsausblick: Digitalisierung und KI in der TGA-Planung</h2>
+
+  <p>Der Blick nach vorn zeigt klar: Die Bedeutung von KI und Digitalisierung wird weiter zunehmen. Bauprojekte werden komplexer. Der Fachkräftemangel bleibt. Gleichzeitig steigen die Anforderungen an Qualität, Nachhaltigkeit und lückenlose Dokumentation über den gesamten Lebenszyklus eines Gebäudes.</p>
+
+  <p>Für Planungsbüros bedeutet das, frühzeitig auf zukunftsfähige Software zu setzen. Plattformunabhängige, browserbasierte Lösungen wie TGAassist 2026 passen gut in diese Entwicklung. Sie lassen sich flexibel einsetzen, integrieren sich in bestehende IT-Landschaften und wachsen mit den Anforderungen der Projekte.</p>
+
+  <p>Ein wichtiger Trend ist die stärkere Vernetzung von Planung, Ausführung und Betrieb. Digitale Zwillinge und strukturierte Daten spielen dabei eine zentrale Rolle. KI-gestützte Systeme helfen, diese Daten sinnvoll zu nutzen, Prognosen zu erstellen und Fehler frühzeitig zu erkennen.</p>
+
+  <p>Wer jetzt in Digitalisierung investiert, sichert sich klare Vorteile — nicht nur in der Effizienz, sondern auch in der Positionierung gegenüber Auftraggebern, die zunehmend digitale Kompetenz und transparente Prozesse erwarten.</p>
+
+  <h2>Umsetzung im eigenen Büro — Schritt für Schritt starten</h2>
+
+  <p>Der Einstieg in KI-gestützte Planung muss kein großes Projekt sein. Wichtig ist ein klarer Startpunkt. Viele Büros beginnen mit einzelnen Prozessen wie GAEB-Prüfung, digitalem Aufmaß oder automatisierter Honorarermittlung, um erste Erfahrungen zu sammeln.</p>
+
+  <p>TGAassist 2026 ist so aufgebaut, dass einzelne Module genutzt werden können. Teams können sich schrittweise an digitale Abläufe gewöhnen. Der Schulungsaufwand bleibt überschaubar — die Oberfläche ist bewusst einfach gehalten, sodass auch weniger technikaffine Mitarbeitende schnell produktiv werden.</p>
+
+  <p>Ein guter Ansatz ist es, ein Pilotprojekt zu definieren: Ein laufendes oder neues Projekt wird vollständig digital abgebildet. Erfahrungen aus diesem Projekt lassen sich später auf weitere Vorhaben übertragen und intern als Best Practice etablieren.</p>
+
+  <p>So wird Digitalisierung nicht zur Belastung, sondern zu einem echten Hilfsmittel im Alltag, das Akzeptanz schafft und messbaren Nutzen bringt.</p>
+
+  <h2>Häufig gestellte Fragen</h2>
+
+  <div class="faq-section">
+    <div class="faq-item">
+      <div class="faq-q">Für wen ist TGAassist 2026 besonders geeignet?</div>
+      <div class="faq-a">TGAassist 2026 richtet sich an Ingenieur- und Planungsbüros für Technische Gebäudeausrüstung im DACH-Raum. Besonders profitieren Büros, die Zeit sparen, Transparenz schaffen und ihre Prozesse haftungssicher digitalisieren möchten.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Ersetzt KI die Arbeit von TGA-Planern?</div>
+      <div class="faq-a">Nein. KI unterstützt bei Routinen und Analysen. Fachliche Entscheidungen bleiben immer beim Planer. Die Software dient als Werkzeug, nicht als Ersatz, und stärkt die Rolle des Ingenieurs.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Wie hilft KI-gestützte Abstimmung konkret im Projekt?</div>
+      <div class="faq-a">Änderungen und Konflikte zwischen Gewerken werden früher erkannt. Alle Beteiligten arbeiten mit einer gemeinsamen Datenbasis. Das reduziert Missverständnisse, Nachträge und zeitintensive Abstimmungsprozesse.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Ist TGAassist 2026 auch ohne BIM nutzbar?</div>
+      <div class="faq-a">Ja. Die Plattform ist nicht an ein bestimmtes Planungssystem gebunden. Auch klassische Projekte profitieren von digitaler Prüfung, strukturierter Dokumentation und intelligenter Automatisierung.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Wie schnell lassen sich erste Ergebnisse erzielen?</div>
+      <div class="faq-a">Oft schon nach wenigen Wochen. Besonders bei wiederkehrenden Aufgaben wie GAEB-Prüfungen, Nachtragsbewertungen oder Honorarberechnungen zeigt sich die Zeitersparnis sehr schnell.</div>
+    </div>
+  </div>
+
+  <h2>Jetzt den nächsten Schritt gehen</h2>
+
+  <p>TGAassist 2026 zeigt, wie KI-gestützte Planung und Abstimmung in der Technischen Gebäudeausrüstung heute funktionieren kann — nicht kompliziert, nicht abstrakt, sondern praxisnah, nachvollziehbar und verständlich für den Büroalltag.</p>
+
+  <p>Für Ingenieur- und Planungsbüros im DACH-Raum bietet die Plattform eine echte Chance: Prozesse werden schneller, Fehler werden reduziert, die Zusammenarbeit klarer. Gleichzeitig steigen die Haftungssicherheit und die wirtschaftliche Planbarkeit von Projekten.</p>
+
+  <p>Wer Digitalisierung strategisch angeht, schafft Freiräume für das Wesentliche: gute Planung, technische Qualität, zufriedene Auftraggeber. Jetzt ist der richtige Zeitpunkt, diesen Schritt zu gehen.</p>
+
+</article>
+
+<div class="article-cta">
+  <div class="cta-box">
+    <h3>TGAassist 2026 — 14 Tage kostenlos testen</h3>
+    <p>KI-gestützte Planung und Abstimmung für TGA-Büros im DACH-Raum. Browserbasiert, ohne Installation, sofort einsatzbereit.</p>
+    <a href="/preise">Jetzt testen →</a>
+  </div>
+</div>
+
+<div class="back-link">
+  <a href="/blog">← Zurück zur Übersicht</a>
+</div>
+
+<footer>
+  <div class="footer-logo">TGAassist</div>
+  <div class="footer-links">
+    <a href="/datenschutz">Datenschutz</a>
+    <a href="/impressum">Impressum</a>
+    <a href="/agb">AGB</a>
+    <a href="mailto:one@tgaassist.app">Kontakt</a>
+  </div>
+  <div class="footer-copy">© 2026 TGAassist · Alle Preise netto zzgl. 19 % MwSt.</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+</script>
+</body>
+</html>
