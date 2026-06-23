@@ -59,6 +59,10 @@
     .blog-hero h1 span{background:linear-gradient(135deg,var(--blue2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     .blog-hero p{font-size:17px;color:var(--muted);max-width:560px;margin:0 auto;line-height:1.7}
 
+    /* BLOG INTRO */
+    .blog-intro{max-width:760px;margin:0 auto;padding:0 40px 60px;position:relative;z-index:1;text-align:center}
+    .blog-intro p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:16px}
+
     /* FILTER */
     .filter-bar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:0 40px 60px;position:relative;z-index:1}
     .filter-btn{font-size:12.5px;font-weight:600;padding:7px 16px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer;transition:all .2s;letter-spacing:.02em}
@@ -78,6 +82,13 @@
     .card-meta{font-size:12px;color:var(--slate);margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
     .card-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(59,130,246,.15);color:var(--blue2);margin-bottom:4px}
     .card-new{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(16,185,129,.15);color:var(--green);margin-bottom:4px}
+
+    /* BLOG CATEGORIES */
+    .blog-categories{max-width:760px;margin:0 auto;padding:60px 40px;border-top:1px solid var(--line);position:relative;z-index:1}
+    .blog-categories h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin-bottom:20px;letter-spacing:-.02em;text-align:center}
+    .blog-categories ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+    .blog-categories li{font-size:14px;color:var(--muted);line-height:1.7;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+    .blog-categories strong{color:var(--white)}
 
     /* NEWSLETTER */
     .newsletter{background:var(--ink2);border-top:1px solid var(--line);padding:80px 40px;text-align:center;position:relative;z-index:1}
@@ -101,7 +112,7 @@
     @media(max-width:900px){
       .blog-grid{grid-template-columns:repeat(2,1fr)}
       nav{padding:16px 20px}
-      .blog-hero,.filter-bar,.blog-grid,.newsletter{padding-left:20px;padding-right:20px}
+      .blog-hero,.filter-bar,.blog-grid,.newsletter,.blog-intro,.blog-categories{padding-left:20px;padding-right:20px}
     }
     @media(max-width:600px){
       .blog-grid{grid-template-columns:1fr}
@@ -146,6 +157,18 @@
   <p>Praxisnah, normkonform, ohne Marketingsprache. Vom Planer, für Planer.</p>
 </section>
 
+<!-- BLOG INTRO -->
+<section class="blog-intro">
+  <p>Der TGAassist-Blog liefert praxisnahe Fachartikel für TGA-Fachplaner in Deutschland.
+  Unsere Beiträge behandeln aktuelle Themen wie den Einsatz von KI in der TGA-Planung,
+  VOB/B-konforme Nachtragspüfung, GAEB DA XML-Kompatibilität, hydraulischen Abgleich
+  bei Wärmepumpen und plattformunabhängiges Arbeiten im Planungsbüro. Alle Artikel sind
+  von TGA-Planern für TGA-Planer geschrieben — mit konkreten Handlungsempfehlungen
+  statt theoretischer Übersichten.</p>
+  <p>Nutzen Sie unsere Wissensbasis, um Ihre Planungsprozesse effizienter zu gestalten,
+  Honorare rechtssicher abzusichern und neue KI-Tools fundiert zu bewerten.</p>
+</section>
+
 <!-- FILTER -->
 <div class="filter-bar">
   <button class="filter-btn active" data-cat="alle">Alle</button>
@@ -164,7 +187,7 @@
     <span class="card-new">Neu</span>
     <span class="card-cat blue">KI &amp; Digitalisierung</span>
     <h2>KI in der TGA-Planung erklärt — Entscheidungsfindung, Qualitätssicherung und Abstimmung</h2>
-    <p>Wie KI in TGA-Büros Entscheidungen vorbereitet, Qualitätssicherung früh verankert und die Gewerkeabstimmung verbessert — technisch erklärt, praxisnah.</p>
+    <p>KI-Systeme verändern die TGA-Planung grundlegend — von der automatisierten Entscheidungsfindung bis zur KI-gestützten Qualitätssicherung. Dieser Artikel erklärt, welche KI-Methoden heute in der Gebäudetechnik eingesetzt werden, wo ihre Grenzen liegen und wie Planer die Technologie sinnvoll in ihren Workflow integrieren.</p>
     <div class="card-meta">⏱ 9 Min Lesezeit · Mai 2026</div>
   </a>
 
@@ -172,7 +195,7 @@
     <span class="card-new">Neu</span>
     <span class="card-cat cyan">Arbeitsweise &amp; Tools</span>
     <h2>KI-Tools für TGA-Büros im Vergleich — Was leistet TGAassist 2026?</h2>
-    <p>Ein ehrlicher Vergleich: Was können KI-Tools in der TGA-Planung wirklich leisten? Wo liegen die Grenzen — und worauf sollte man bei der Einführung achten?</p>
+    <p>KI-Tools versprechen mehr Effizienz im Planungsbüro — doch nicht alle halten, was sie versprechen. Dieser Vergleich zeigt, welche Funktionen in der TGA-Praxis wirklich Zeit sparen, wo Automatisierung an ihre Grenzen stößt und wie TGAassist 2026 im direkten Test abschneidet.</p>
     <div class="card-meta">⏱ 8 Min Lesezeit · Mai 2026</div>
   </a>
 
@@ -180,15 +203,15 @@
     <span class="card-new">Neu</span>
     <span class="card-cat blue">KI &amp; Digitalisierung</span>
     <h2>TGAassist 2026 — Neue Funktionen für KI-gestützte Planung und Abstimmung</h2>
-    <p>Mehr Komplexität, weniger Zeit, steigende Haftungsanforderungen: Wie TGAassist 2026 mit KI-gestützter Abstimmung und automatisierten GAEB-, VOB- und HOAI-Prozessen antwortet.</p>
+    <p>TGA-Büros stehen 2026 vor wachsender Planungskomplexität und steigenden Haftungsanforderungen. TGAassist 2026 reagiert mit neuen KI-Modulen für automatisierte Gewerkeabstimmung, strukturierte GAEB-Verarbeitung und VOB/B-konforme Nachtragspüfung — damit Planer mehr Projekte in weniger Zeit rechtssicher abwickeln.</p>
     <div class="card-meta">⏱ 7 Min Lesezeit · Mai 2026</div>
   </a>
 
   <a href="/blog/vob-nachtragspruefung-ki" class="blog-card" data-cat="vob">
     <span class="card-new">Neu</span>
     <span class="card-cat gold">VOB/B &amp; Recht</span>
-    <h2>VOB/B-konforme Nachtragsprüfung mit KI — so sichern Sie Ihre Honorare ab</h2>
-    <p>Wie TGA-Planungsbüros mit KI-gestützter Nachtragsprüfung Honorare sichern, Haftungsrisiken reduzieren und Prüfprozesse strukturieren. Praxisnah, normkonform.</p>
+    <h2>VOB/B-konforme Nachtragspüfung mit KI — so sichern Sie Ihre Honorare ab</h2>
+    <p>Nachträge sind ein Hauptstreitpunkt auf der Baustelle — und für TGA-Planer ein erhebliches Haftungsrisiko. Dieser Artikel zeigt, wie KI-gestützte Nachtragspüfung nach VOB/B hilft, berechtigte Forderungen schnell zu erkennen, Honorare rechtssicher abzusichern und Prüfprozesse strukturiert zu dokumentieren.</p>
     <div class="card-meta">⏱ 8 Min Lesezeit · Mai 2026</div>
   </a>
 
@@ -197,28 +220,28 @@
   <a href="/blog/ki-tga-planung" class="blog-card" data-cat="ki">
     <span class="card-cat blue">KI &amp; Digitalisierung</span>
     <h2>KI in der TGA-Planung — Chancen &amp; Grenzen</h2>
-    <p>Was KI heute wirklich kann, wo die Haftungsgrenze liegt — und warum erklärbare KI entscheidend ist.</p>
+    <p>KI in der TGA-Planung verspricht Effizienzgewinne — doch Planer tragen weiterhin die Verantwortung für ihre Ergebnisse. Dieser Artikel erklärt, welche Aufgaben KI heute zuverlässig übernehmen kann, wo die Haftungsgrenze für Fachplaner liegt und warum Transparenz bei KI-Entscheidungen unverzichtbar ist.</p>
     <div class="card-meta">⏱ 5 Min Lesezeit · März 2026</div>
   </a>
 
   <a href="/blog/vob-nachtraege" class="blog-card" data-cat="vob">
     <span class="card-cat gold">VOB/B &amp; Recht</span>
     <h2>VOB/B Nachträge — was Planer wirklich wissen müssen</h2>
-    <p>Wann ist ein Nachtrag berechtigt? Welche Fristen gelten? Wie schützt du dich als Planer?</p>
+    <p>Nachträge nach VOB/B sind komplex — und werden von Auftraggebern häufig abgelehnt oder verzögert. Dieser Leitfaden erklärt, wann ein Nachtrag rechtlich berechtigt ist, welche Anmeldefristen Planer unbedingt einhalten müssen und wie Sie Ihre Position als TGA-Fachplaner wirkungsvoll absichern.</p>
     <div class="card-meta">⏱ 7 Min Lesezeit · März 2026</div>
   </a>
 
   <a href="/blog/waermepumpe-hydraulischer-abgleich" class="blog-card" data-cat="heizung">
     <span class="card-cat green">Heizung &amp; Energie</span>
     <h2>Wärmepumpe und hydraulischer Abgleich</h2>
-    <p>Ohne korrekten Abgleich kein effizienter Betrieb. Ein Leitfaden für Planer und Ausführende.</p>
+    <p>Der hydraulische Abgleich ist die Voraussetzung für einen effizienten Wärmepumpenbetrieb — und gleichzeitig einer der häufigsten Planungsmängel in der Praxis. Dieser Leitfaden erklärt die Berechnungsgrundlagen, typische Fehlerquellen beim Abgleich und wie TGA-Planer die Norm-Anforderungen strukturiert umsetzen.</p>
     <div class="card-meta">⏱ 6 Min Lesezeit · Februar 2026</div>
   </a>
 
   <a href="/blog/plattformunabhaengig-arbeiten" class="blog-card" data-cat="tools">
     <span class="card-cat cyan">Arbeitsweise &amp; Tools</span>
     <h2>Plattformunabhängiges Arbeiten im Planungsbüro</h2>
-    <p>Warum browserbasierte Tools für TGA-Büros heute der bessere Weg sind — und was dabei zu beachten ist.</p>
+    <p>Lokale Software bindet TGA-Büros an bestimmte Geräte und Betriebssysteme — browserbasierte Alternativen ermöglichen dagegen ortsunabhängiges Arbeiten ohne Installationsaufwand. Dieser Beitrag zeigt, welche Voraussetzungen plattformunabhängige Tools erfüllen müssen und was bei der Umstellung auf cloudbasierte Planungstools zu beachten ist.</p>
     <div class="card-meta">⏱ 4 Min Lesezeit · Februar 2026</div>
   </a>
 
@@ -228,7 +251,7 @@
     <span class="card-cat blue">KI &amp; Digitalisierung</span>
     <div class="card-badge">Demnächst</div>
     <h2>GAEB DA XML — Versionen, Fallen, Kompatibilität</h2>
-    <p>DA83 vs. DA86, Version 3.2 vs. 3.3 — warum das in der Praxis immer wieder Probleme macht.</p>
+    <p>GAEB DA XML ist der Standard für den digitalen Datenaustausch im Bauwesen — doch Versionsunterschiede und Schnittstellen-Inkompatibilitäten sorgen in der Praxis für Reibungsverluste. Dieser Artikel erklärt die Unterschiede zwischen DA83 und DA86, typische Kompatibilitätsfallen und wie TGA-Büros den Datenaustausch zuverlässig gestalten.</p>
     <div class="card-meta">⏱ ca. 8 Min Lesezeit · Erscheint bald</div>
   </a>
 
@@ -236,11 +259,22 @@
     <span class="card-cat gold">VOB/B &amp; Recht</span>
     <div class="card-badge">Demnächst</div>
     <h2>Massenermittlung nach REB — Grundlagen für die Praxis</h2>
-    <p>Was REB-Aufmaß bedeutet, welche Regeln gelten und wie digitale Tools dabei helfen können.</p>
+    <p>Die Massenermittlung nach REB ist verbindlich für abrechnungsrelevante Aufmaße — und für viele TGA-Planer ein tägliches Praxisthema. Dieser Artikel erklärt die Grundlagen des REB-Aufmaßes, welche Regeln für korrekte Mengenermittlung gelten und wie digitale Tools den Prozess beschleunigen und absichern.</p>
     <div class="card-meta">⏱ ca. 6 Min Lesezeit · Erscheint bald</div>
   </a>
 
 </div>
+
+<!-- THEMENBEREICHE -->
+<section class="blog-categories">
+  <h2>Themenbereiche</h2>
+  <ul>
+    <li><strong>KI &amp; Digitalisierung</strong> — Praxisberichte zu KI-Tools, Automatisierung und digitaler Planung</li>
+    <li><strong>Recht &amp; Honorar</strong> — VOB/B, HOAI und Nachtragspüfung verständlich erklärt</li>
+    <li><strong>Normen &amp; Standards</strong> — GAEB, REB, DIN-Normen für die tägliche Praxis</li>
+    <li><strong>Technik &amp; Systeme</strong> — Wärmepumpen, hydraulischer Abgleich, Anlagentechnik</li>
+  </ul>
+</section>
 
 <!-- NEWSLETTER -->
 <section class="newsletter">
