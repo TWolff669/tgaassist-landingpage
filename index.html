@@ -16,7 +16,7 @@
   --cyan:   #22D3EE;
   --gold:   #F59E0B;
   --green:  #10B981;
-  --slate:  #64748B;
+  --slate:  #718096;
   --muted:  #94A3B8;
   --line:   rgba(255,255,255,0.07);
   --line2:  rgba(255,255,255,0.12);
@@ -33,6 +33,14 @@ body{
   overflow-x:hidden;
   cursor:none;
 }
+
+/* ── SKIP LINK ── */
+.skip-link{
+  position:absolute;top:-40px;left:0;
+  background:#000;color:#fff;padding:8px;
+  z-index:100;
+}
+.skip-link:focus{top:0}
 
 /* ── CUSTOM CURSOR ── */
 .cursor{
@@ -605,13 +613,14 @@ footer{
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
 <!-- ── NAV ── -->
 <nav id="nav">
-  <div class="nav-logo"><div class="logo-dot"></div>TGAassist</div>
+  <div class="nav-logo"><div class="logo-dot" aria-hidden="true"></div>TGAassist</div>
   <div class="nav-links">
     <a href="#tools">Apps</a>
     <a href="#wie">Wie es funktioniert</a>
@@ -628,14 +637,14 @@ footer{
 </div>
 
 <!-- ── HERO ── -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
+<section class="hero" id="main-content">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="orb orb1" aria-hidden="true"></div>
+  <div class="orb orb2" aria-hidden="true"></div>
+  <div class="orb orb3" aria-hidden="true"></div>
 
-  <div class="hero-tag"><div class="tag-blink"></div>Jetzt verfügbar — April 2026</div>
+  <div class="hero-tag"><div class="tag-blink" aria-hidden="true"></div>Jetzt verfügbar — April 2026</div>
 
   <h1>
     <span class="h1-line1">TGA-Planung,</span>
@@ -671,7 +680,7 @@ footer{
     </div>
   </div>
 
-  <div class="scroll-hint">
+  <div class="scroll-hint" aria-hidden="true">
     <div class="scroll-txt">Scroll</div>
     <div class="scroll-line"></div>
   </div>
