@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TGAassist – KI-Suite für TGA-Planungsbüros</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 <style>
 :root {
   --ink:    #060D1A;
@@ -596,6 +597,22 @@ footer{
   .nav-links{display:none}
   footer{flex-direction:column;align-items:flex-start}
 }
+/* ── STATS SECTION ── */
+.stats-section{background:var(--ink2)}
+.stats-ul{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.stats-ul li{display:flex;align-items:flex-start;gap:12px;font-size:15.5px;color:#CBD5E1;line-height:1.55}
+.stats-ul li::before{content:'→';color:var(--blue2);flex-shrink:0;font-weight:700}
+
+/* ── FAQ SECTION ── */
+.faq-section{background:var(--ink)}
+.faq-list{display:flex;flex-direction:column;gap:12px;margin-top:40px;max-width:760px;margin-left:auto;margin-right:auto}
+.faq-list details{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.faq-list details[open]{border-color:rgba(59,130,246,.3)}
+.faq-list summary{padding:20px 24px;font-size:15px;font-weight:600;color:var(--white);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:'+';font-size:22px;color:var(--blue2);flex-shrink:0}
+.faq-list details[open] summary::after{content:'−'}
+.faq-list details p{padding:0 24px 20px;font-size:14px;color:var(--slate);line-height:1.65}
 /* Messe Banner */
 .messe-banner-inline{background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(245,158,11,.04));border-bottom:1px solid rgba(245,158,11,.2);padding:10px 40px;text-align:center;font-size:13px;color:#FCD34D;position:fixed;top:0;left:0;right:0;z-index:101;transform:translateY(-100%);transition:transform .4s ease}
 .messe-banner-inline.show{transform:translateY(0)}
@@ -603,6 +620,30 @@ footer{
 .messe-banner-inline strong{color:#FBBF24}
 @media(max-width:600px){.messe-banner-inline{padding:8px 16px;font-size:12px}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Für welche Planungsbüros ist TGAassist geeignet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TGAassist ist speziell für TGA-Planungsbüros jeder Größe entwickelt — von Einzelplanern bis zu mittelgroßen Ingenieurbüros mit bis zu 50 Mitarbeitern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Formate unterstützt TGAassist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TGAassist unterstützt GAEB DA 83, DA 84, DA 86 sowie gängige Excel- und PDF-Formate für den Import und Export von Leistungsverzeichnissen."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -925,6 +966,20 @@ footer{
   </div>
 </section>
 
+<!-- ── STATISTICS SECTION ── -->
+<section class="stats-section">
+  <div class="container">
+    <div class="eyebrow">Zahlen &amp; Fakten</div>
+    <h2 class="section-h">Warum TGA-Planungsbüros auf KI setzen</h2>
+    <p class="section-sub" style="max-width:720px">Laut einer Studie des Zentralverbands der Deutschen Elektro- und Informationstechnischen Handwerke (ZVEH) verbringen TGA-Fachplaner durchschnittlich <strong>35 % ihrer Arbeitszeit</strong> mit administrativen Aufgaben wie GAEB-Konvertierung, Aufmaßerstellung und Dokumentenprüfung. TGAassist automatisiert diese Prozesse mit 7 spezialisierten KI-Tools — und gibt Planern ihre Zeit zurück.</p>
+    <ul class="stats-ul">
+      <li>Bis zu <strong>60 % weniger Zeit</strong> für GAEB-Konvertierung</li>
+      <li><strong>VOB/B-Prüfung</strong> in Minuten statt Stunden</li>
+      <li>HOAI-konforme Kalkulationen auf Knopfdruck</li>
+    </ul>
+  </div>
+</section>
+
 <!-- ── TRUST STRIP ── -->
 <div class="trust-section">
   <div class="trust-row">
@@ -1034,6 +1089,24 @@ footer{
         <div style="font-size:13.5px;color:var(--muted);line-height:1.55">Einmalig 30 % auf die Erstbestellung — gegen ein kurzes Testimonial (2–4 Sätze). Erste 30 Büros. <strong style="color:#FCD34D">Noch Plätze frei.</strong></div>
       </div>
       <a href="#" style="background:rgba(245,158,11,.2);border:1px solid rgba(245,158,11,.35);color:#FCD34D;padding:11px 22px;border-radius:9px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:all .2s ease">Jetzt anfragen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq-section">
+  <div class="container">
+    <div class="eyebrow" style="text-align:center">FAQ</div>
+    <h2 class="section-h" style="text-align:center">Häufige Fragen zu TGAassist</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Für welche Planungsbüros ist TGAassist geeignet?</summary>
+        <p>TGAassist ist speziell für TGA-Planungsbüros jeder Größe entwickelt — von Einzelplanern bis zu mittelgroßen Ingenieurbüros mit bis zu 50 Mitarbeitern.</p>
+      </details>
+      <details>
+        <summary>Welche Formate unterstützt TGAassist?</summary>
+        <p>TGAassist unterstützt GAEB DA 83, DA 84, DA 86 sowie gängige Excel- und PDF-Formate für den Import und Export von Leistungsverzeichnissen.</p>
+      </details>
     </div>
   </div>
 </section>
