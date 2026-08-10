@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TGAassist – KI-Suite für TGA-Planungsbüros</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -32,7 +33,11 @@ body{
   color:var(--white);
   overflow-x:hidden;
   cursor:none;
+  font-size:16px;
+  line-height:1.6;
 }
+p,li,td,label,input,span{font-size:max(16px,1rem)}
+.caption,.footnote,.meta-text{font-size:14px}
 
 /* ── CUSTOM CURSOR ── */
 .cursor{
@@ -111,6 +116,7 @@ nav.scrolled{
   padding:140px 40px 100px;
   text-align:center;
   overflow:hidden;
+  contain:layout;
 }
 .hero-bg{
   position:absolute;inset:0;
@@ -887,7 +893,7 @@ footer{
 
     <div class="proof-grid">
       <div class="proof-card reveal-up">
-        <div class="quote-mark">"</div>
+        <div class="quote-mark">&ldquo;</div>
         <div class="proof-text">Den Nachtrag Navigator haben wir beim ersten Mal ausprobiert — eine 80-seitige Nachtragsprüfung in 25 Minuten statt eines halben Arbeitstags. Das allein rechtfertigt das Abo.</div>
         <div class="proof-author">
           <div class="proof-avatar">MT</div>
@@ -899,7 +905,7 @@ footer{
       </div>
 
       <div class="proof-card reveal-up" style="transition-delay:.1s">
-        <div class="quote-mark">"</div>
+        <div class="quote-mark">&ldquo;</div>
         <div class="proof-text">Endlich ein HOAI-Tool das wirklich TGA denkt — ALG 1 bis 3, Zuschläge, Abschlagsrechnungen. Ich hab vorher alles in Excel gemacht. Das hier ist eine andere Welt.</div>
         <div class="proof-author">
           <div class="proof-avatar">SK</div>
@@ -911,7 +917,7 @@ footer{
       </div>
 
       <div class="proof-card reveal-up" style="transition-delay:.2s">
-        <div class="quote-mark">"</div>
+        <div class="quote-mark">&ldquo;</div>
         <div class="proof-text">Der GAEB Konverter allein hat uns in den ersten vier Wochen locker 15 Stunden Tipparbeit gespart. Das Produkt wurde offensichtlich von jemandem gebaut, der weiß wie Planung wirklich läuft.</div>
         <div class="proof-author">
           <div class="proof-avatar">AR</div>
