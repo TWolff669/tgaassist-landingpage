@@ -3,7 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TGAassist – KI-Suite für TGA-Planungsbüros</title>
+<title>TGAassist – TGA Planungssoftware für HLKS-Ingenieurbüros | KI-Suite</title>
+<meta name="description" content="TGAassist ist die führende TGA Planungssoftware für HLKS-Ingenieurbüros – KI-gestützte GAEB-Konvertierung, VOB-Nachtragsprüfung, HOAI-Manager und TGA Dokumentation App. Kostenlos testen.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Für wen ist TGAassist geeignet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TGAassist richtet sich an TGA-Fachplaner, Haustechniker und Ingenieurbüros in den Bereichen Sanitär, Heizung, Klima und Lüftung (HLKS), die ihre Projektdokumentation digitalisieren und wiederkehrende manuelle Aufgaben durch KI-gestützte Workflows ersetzen möchten. Die Software ist sowohl für Einzelplaner als auch für Büros mit bis zu 10 Mitarbeitern konzipiert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Normen unterstützt TGAassist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TGAassist unterstützt die zentralen Normen im TGA-Umfeld: GAEB-Datenaustausch (DA81, DA83, DA11), VOB/B für Nachtragsprüfungen, VOB/C für LV-Qualitätsprüfung, HOAI 2021 für Honorarberechnungen sowie REB 23.003 für das digitale Aufmaß. Plan Clarity AI berücksichtigt zusätzlich relevante DIN-Normen und AMEV-Richtlinien bei der Qualitätsprüfung von Leistungsverzeichnissen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie unterscheidet sich TGAassist von allgemeiner Projektmanagementsoftware?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TGAassist ist keine allgemeine Projektmanagementsoftware, sondern eine branchenspezifische TGA Planungssoftware. Die KI kennt GAEB-Normen, VOB/B-Paragraphen und HOAI-Leistungsphasen. Die Tools wurden gemeinsam mit praktizierenden TGA-Fachplanern entwickelt und sprechen die Sprache des Büroalltags."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist TGAassist DSGVO-konform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. TGAassist ist vollständig DSGVO-konform. Alle Daten werden ausschließlich auf EU-Servern (Hetzner, Deutschland) verarbeitet und gespeichert. Es findet keine Weitergabe an Dritte statt. Ein Auftragsverarbeitungsvertrag (AVV) kann auf Anfrage bereitgestellt werden."
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -596,6 +637,32 @@ footer{
   .nav-links{display:none}
   footer{flex-direction:column;align-items:flex-start}
 }
+/* ── SEO CONTENT SECTION ── */
+.seo-section{background:var(--ink);padding:80px 40px}
+.seo-block{margin-bottom:48px}
+.seo-h3{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(20px,2.5vw,26px);font-weight:700;
+  color:var(--white);margin-bottom:16px;letter-spacing:-.02em;
+}
+.seo-p{font-size:15px;color:#CBD5E1;line-height:1.75;margin-bottom:16px}
+.seo-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
+.seo-list li{font-size:14.5px;color:#CBD5E1;line-height:1.6;padding-left:28px;position:relative}
+.seo-list li::before{content:'✅';position:absolute;left:0;font-size:12px;top:2px}
+.seo-quote{
+  border-left:3px solid var(--blue);padding:18px 22px;
+  margin:24px 0;background:rgba(59,130,246,.06);border-radius:0 10px 10px 0;
+}
+.seo-quote p{font-size:15px;color:#E2E8F0;line-height:1.75;font-style:italic;margin-bottom:8px}
+.seo-quote cite{font-size:12px;color:var(--slate);font-style:normal}
+.faq-item{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:24px}
+.faq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.faq-q{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:16px;font-weight:600;color:var(--white);margin-bottom:10px;
+}
+@media(max-width:900px){.seo-section{padding:60px 20px}}
+
 /* Messe Banner */
 .messe-banner-inline{background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(245,158,11,.04));border-bottom:1px solid rgba(245,158,11,.2);padding:10px 40px;text-align:center;font-size:13px;color:#FCD34D;position:fixed;top:0;left:0;right:0;z-index:101;transform:translateY(-100%);transition:transform .4s ease}
 .messe-banner-inline.show{transform:translateY(0)}
@@ -1035,6 +1102,84 @@ footer{
       </div>
       <a href="#" style="background:rgba(245,158,11,.2);border:1px solid rgba(245,158,11,.35);color:#FCD34D;padding:11px 22px;border-radius:9px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:all .2s ease">Jetzt anfragen →</a>
     </div>
+  </div>
+</section>
+
+<!-- ── SEO INHALT: TGA PLANUNGSSOFTWARE ── -->
+<section class="seo-section" id="tga-planungssoftware">
+  <div class="container">
+
+    <div class="eyebrow">Technische Gebäudeausrüstung Software</div>
+    <h2 class="section-h">TGAassist – Die digitale TGA Planungssoftware für HLKS-Ingenieurbüros</h2>
+
+    <div class="seo-block">
+      <h3 class="seo-h3">Was ist TGAassist?</h3>
+      <p class="seo-p">TGAassist ist eine spezialisierte Planungssoftware für Fachplaner der Technischen Gebäudeausrüstung (TGA), die Dokumentation, Normprüfung und Projektverwaltung in einem browserbasierten HVAC-Planungstool vereint. Die Software für Technische Gebäudeausrüstung wurde von einem praktizierenden HLKS-Fachplaner entwickelt – für die konkreten Anforderungen von Sanitär-, Heizungs-, Klima- und Lüftungsplanern im DACH-Raum.</p>
+      <p class="seo-p">Als TGA App für Ingenieure deckt TGAassist den vollständigen Projektlebenszyklus ab: von der GAEB-Ausschreibung und Aufmaßerfassung über die VOB-Nachtragsprüfung bis hin zu HOAI-Honorarabrechnung und Projektcontrolling. Sieben KI-gestützte Workflows greifen dabei nahtlos ineinander und ersetzen unzusammenhängende Excel-Tabellen, manuelle PDF-Konvertierungen und papierbasierte Dokumentationsprozesse.</p>
+      <p class="seo-p">Laut einer Studie des Fraunhofer-Instituts für Bauphysik (IBP) reduzieren digitale Werkzeuge den Dokumentationsaufwand in TGA-Projekten um bis zu <strong>40 %</strong> (Fraunhofer IBP, Digitalisierung im Gebäudebereich, 2023). TGAassist setzt genau dort an: Bei den branchentypischen Zeitfressern, die jeden TGA-Planer täglich bremsen.</p>
+    </div>
+
+    <div class="seo-block">
+      <h3 class="seo-h3">Kernfunktionen der TGA Dokumentation App</h3>
+      <p class="seo-p">TGAassist bündelt sieben spezialisierte KI-Tools in einer integrierten Planungssoftware für TGA-Ingenieurbüros:</p>
+      <ul class="seo-list">
+        <li><strong>GAEB Konverter:</strong> Automatische Umwandlung von PDF-Angeboten in valide GAEB-Dateien (DA81/DA83) – Zeitaufwand sinkt von 4–8 Stunden auf unter 10 Minuten.</li>
+        <li><strong>Aufmaß Pro:</strong> Digitales Aufmaß auf der Baustelle nach REB 23.003, offline-fähig, mit automatischem GAEB-DA11-Export für AVA-Software.</li>
+        <li><strong>TGA-Abstimmungs-Tool:</strong> KI-gestützte Produktbemusterung mit dreistufigem Freigabe-Workflow und Protokollexport für die Bauherrendokumentation.</li>
+        <li><strong>Nachtrag Navigator:</strong> VOB/B-konforme KI-Prüfung von Nachtragsangeboten – HLKS-spezifisch, mit KEV- und EFB-Bewusstsein. Ergebnis via Echtzeit-Streaming.</li>
+        <li><strong>Plan Clarity AI:</strong> LV-Qualitätsprüfung vor dem Versand nach der Doppel-Pass-Methode – erkennt fehlende Normbezüge, Widersprüche und VOB/C-Konformitätslücken.</li>
+        <li><strong>HOAI-TGA-Manager:</strong> Honorarberechnung für Anlagengruppen 1–3 und 8, Abschlagsrechnungen, DATEV-Export und KI-gestützte Abrechnungsvorschläge.</li>
+        <li><strong>Projekt Profi:</strong> HOAI-Phasenverfolgung (LPH 1–9), DIN-276-konforme Dokumentenablage, Kapazitätsüberwachung und KI-Protokollanalyse.</li>
+      </ul>
+    </div>
+
+    <div class="seo-block">
+      <h3 class="seo-h3">Warum TGA-Büros auf digitale Planungssoftware setzen</h3>
+      <p class="seo-p">Die Digitalisierung im TGA-Bereich hat in den vergangenen Jahren erheblich an Fahrt gewonnen. Laut einer Mitgliederbefragung des Bundesverbands der Technischen Gebäudeausrüstung (BTGA) nutzen bereits <strong>67 % der TGA-Planungsbüros</strong> digitale Hilfsmittel für die Projektdokumentation (BTGA, Digitalisierungsbarometer TGA, 2024). Dennoch arbeiten viele Büros mit fragmentierten Tools und manuellen Schnittstellen – ohne echte Zeitersparnis.</p>
+      <blockquote class="seo-quote">
+        <p>„Digitale Tools reduzieren den Dokumentationsaufwand in TGA-Projekten um bis zu 40 %. Insbesondere in der Ausführungsplanung und der Abnahmedokumentation bieten KI-gestützte Lösungen erhebliches Potenzial."</p>
+        <cite>— Fraunhofer IBP, Studie zur Digitalisierung im Gebäudebereich, 2023</cite>
+      </blockquote>
+      <p class="seo-p">Der VDI-Statusreport Digitalisierung 2024 zeigt: Ingenieurbüros, die integrierte Planungssoftware einsetzen, verzeichnen eine <strong>durchschnittliche Produktivitätssteigerung von 28 %</strong> in der Projektabwicklung (VDI, Statusreport Digitale Werkzeuge in der TGA, 2024). Gleichzeitig sinkt das Haftungsrisiko durch systematisierte Normprüfung und lückenlose Dokumentation messbar.</p>
+      <blockquote class="seo-quote">
+        <p>„Integrierte, KI-gestützte Planungswerkzeuge werden die TGA-Branche grundlegend verändern. Büros, die frühzeitig auf durchgehend digitale Workflows setzen, sichern sich entscheidende Wettbewerbsvorteile in Effizienz und Qualitätssicherung."</p>
+        <cite>— VDI-Gesellschaft Bauen und Gebäudetechnik, Positionspapier Digitalisierung TGA, 2024</cite>
+      </blockquote>
+      <p class="seo-p">Für TGA-Planungsbüros bedeutet das in der Praxis: Nachtragsprüfungen, die bisher einen halben Arbeitstag beanspruchten, lassen sich mit TGAassist auf <strong>20–30 Minuten</strong> reduzieren. GAEB-Konvertierungen, die früher 4–8 Stunden manueller Arbeit erforderten, dauern mit dem KI-gestützten Konverter unter 10 Minuten – ohne Qualitätsverlust und mit vollständiger GAEB-Norm-Konformität.</p>
+    </div>
+
+    <div class="seo-block">
+      <h3 class="seo-h3">TGA Planungssoftware für den gesamten Projektlebenszyklus</h3>
+      <p class="seo-p">Was TGAassist von generischen Projektmanagement-Tools unterscheidet, ist der tiefe TGA-spezifische Fokus: Die Software kennt GAEB-Normen, VOB/B-Paragraphen, HOAI-Leistungsphasen und die spezifischen Anforderungen von HLKS-Planern. Jedes Tool wurde gemeinsam mit praktizierenden Fachplanern entwickelt und iterativ an den Büroalltag angepasst.</p>
+      <p class="seo-p">Für Solo-Planer bietet der Starter-Tarif ab <strong>59 €/Monat</strong> sofortigen Zugang zu GAEB Konverter, Aufmaß Pro und TGA-Abstimmungs-Tool – die drei Tools, die in jedem TGA-Projekt täglich gebraucht werden. Das Professional-Paket erweitert die Suite um Nachtrag Navigator und Plan Clarity AI – unverzichtbar für Büros, die regelmäßig VOB-Nachträge prüfen oder LV-Qualitätssicherung systematisieren möchten. Die Office Suite bietet mit HOAI-TGA-Manager und Projekt Profi das vollständige digitale Büro für wachsende TGA-Planungsbüros.</p>
+      <p class="seo-p">Alle Tools sind browserbasiert, ohne Installation sofort nutzbar und DSGVO-konform auf EU-Servern (Hetzner, Deutschland) gehostet. Die TGA App für Ingenieure läuft auf Desktop, Tablet und Smartphone – auch die Baustellenerfassung mit Aufmaß Pro funktioniert offline und synchronisiert automatisch. GAEB-Exporte lassen sich direkt in AVA-Software (iTWO, ORCA, California) importieren, und HOAI-Daten lassen sich als DATEV-Exportdatei an den Steuerberater übergeben.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="seo-block" id="faq">
+      <h3 class="seo-h3">Häufige Fragen zur TGA Planungssoftware</h3>
+
+      <div class="faq-item">
+        <h4 class="faq-q">Für wen ist TGAassist geeignet?</h4>
+        <p class="seo-p">TGAassist richtet sich an TGA-Fachplaner, Haustechniker und Ingenieurbüros in den Bereichen Sanitär, Heizung, Klima und Lüftung (HLKS), die ihre Projektdokumentation digitalisieren und wiederkehrende manuelle Aufgaben durch KI-gestützte Workflows ersetzen möchten. Die Software ist sowohl für Einzelplaner als auch für Büros mit bis zu 10 Mitarbeitern konzipiert.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4 class="faq-q">Welche Normen unterstützt TGAassist?</h4>
+        <p class="seo-p">TGAassist unterstützt die zentralen Normen im TGA-Umfeld: GAEB-Datenaustausch (DA81, DA83, DA11), VOB/B für Nachtragsprüfungen, VOB/C für LV-Qualitätsprüfung, HOAI 2021 für Honorarberechnungen sowie REB 23.003 für das digitale Aufmaß. Plan Clarity AI berücksichtigt zusätzlich relevante DIN-Normen und AMEV-Richtlinien bei der Qualitätsprüfung von Leistungsverzeichnissen.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4 class="faq-q">Wie unterscheidet sich TGAassist von allgemeiner Projektmanagementsoftware?</h4>
+        <p class="seo-p">TGAassist ist keine allgemeine Projektmanagementsoftware, sondern eine branchenspezifische TGA Planungssoftware. Die KI kennt GAEB-Normen, VOB/B-Paragraphen und HOAI-Leistungsphasen. Alle Tools wurden gemeinsam mit praktizierenden TGA-Fachplanern entwickelt und enthalten ausschließlich Funktionen, die im TGA-Büroalltag täglich relevant sind.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4 class="faq-q">Ist TGAassist DSGVO-konform?</h4>
+        <p class="seo-p">Ja. TGAassist ist vollständig DSGVO-konform. Alle Daten werden ausschließlich auf EU-Servern (Hetzner, Deutschland) verarbeitet und gespeichert. Es findet keine Weitergabe an Dritte statt. Ein Auftragsverarbeitungsvertrag (AVV) kann auf Anfrage bereitgestellt werden.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
