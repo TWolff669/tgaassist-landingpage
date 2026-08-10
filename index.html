@@ -579,6 +579,12 @@ footer{
 .footer-links a:hover{color:var(--white)}
 .footer-copy{font-size:12.5px;color:var(--slate)}
 
+/* ── TRUST ASSOC ── */
+.trust-assoc{max-width:900px;margin:28px auto 0;text-align:center}
+.trust-assoc-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:14px}
+.trust-assoc-logos{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.assoc-badge{font-size:11.5px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:5px 12px;letter-spacing:.04em;background:rgba(255,255,255,.025)}
+
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   .pain-section .container{grid-template-columns:1fr}
@@ -617,6 +623,7 @@ footer{
     <a href="#wie">Wie es funktioniert</a>
     <a href="/preise">Preise</a>
     <a href="/blog">Blog</a>
+    <a href="/ueber-uns">Über uns</a>
     <a href="#kontakt">Kontakt</a>
   </div>
   <a href="/preise" class="nav-cta">Jetzt starten →</a>
@@ -697,7 +704,7 @@ footer{
           <div class="pain-icon">⚖️</div>
           <div>
             <div class="pain-title">VOB-Nachträge prüfen ohne Netz und doppelten Boden</div>
-            <div class="pain-desc">Haftungsrisiko bei jeder Nachtragsprüfung. Ohne systematische KI-Analyse wird manches übersehen — mit direkten Konsequenzen.</div>
+            <div class="pain-desc">Haftungsrisiko bei jeder Nachtragspüfung. Ohne systematische KI-Analyse wird manches übersehen — mit direkten Konsequenzen.</div>
           </div>
         </div>
         <div class="pain-item reveal-left" style="transition-delay:.2s">
@@ -739,7 +746,7 @@ footer{
 
       <div class="time-bar-row">
         <div class="time-bar-label">
-          <span class="time-bar-name">Nachtragsprüfung</span>
+          <span class="time-bar-name">Nachtragspüfung</span>
           <span class="time-bar-hrs">ohne KI: 4–12 Std.</span>
         </div>
         <div class="time-bar-track"><div class="time-bar-fill" data-width="100"></div></div>
@@ -846,7 +853,7 @@ footer{
       <div class="step reveal-step">
         <div class="step-num">1</div>
         <div>
-          <div class="step-title">Anmelden & Tool wählen</div>
+          <div class="step-title">Anmelden &amp; Tool wählen</div>
           <div class="step-desc">Konto erstellen, Paket wählen, sofort loslegen. Keine Installation, keine IT-Abteilung nötig. Läuft im Browser auf jedem Gerät.</div>
           <div class="step-time">⏱ Unter 3 Minuten bis zur ersten Nutzung</div>
         </div>
@@ -862,7 +869,7 @@ footer{
       <div class="step reveal-step" style="transition-delay:.2s">
         <div class="step-num">3</div>
         <div>
-          <div class="step-title">KI analysiert & liefert Ergebnis</div>
+          <div class="step-title">KI analysiert &amp; liefert Ergebnis</div>
           <div class="step-desc">Nachtrag Navigator zeigt VOB-Bewertung in Echtzeit per Streaming. GAEB Konverter erstellt direkt die herunterladbare GAEB-Datei.</div>
           <div class="step-time">⏱ 20 Sekunden bis Minuten statt Stunden</div>
         </div>
@@ -887,8 +894,8 @@ footer{
 
     <div class="proof-grid">
       <div class="proof-card reveal-up">
-        <div class="quote-mark">"</div>
-        <div class="proof-text">Den Nachtrag Navigator haben wir beim ersten Mal ausprobiert — eine 80-seitige Nachtragsprüfung in 25 Minuten statt eines halben Arbeitstags. Das allein rechtfertigt das Abo.</div>
+        <div class="quote-mark">“</div>
+        <div class="proof-text">Den Nachtrag Navigator haben wir beim ersten Mal ausprobiert — eine 80-seitige Nachtragspüfung in 25 Minuten statt eines halben Arbeitstags. Das allein rechtfertigt das Abo.</div>
         <div class="proof-author">
           <div class="proof-avatar">MT</div>
           <div>
@@ -899,19 +906,19 @@ footer{
       </div>
 
       <div class="proof-card reveal-up" style="transition-delay:.1s">
-        <div class="quote-mark">"</div>
+        <div class="quote-mark">“</div>
         <div class="proof-text">Endlich ein HOAI-Tool das wirklich TGA denkt — ALG 1 bis 3, Zuschläge, Abschlagsrechnungen. Ich hab vorher alles in Excel gemacht. Das hier ist eine andere Welt.</div>
         <div class="proof-author">
           <div class="proof-avatar">SK</div>
           <div>
             <div class="proof-name">S. Kirchner</div>
-            <div class="proof-role">Büroinhaber, Ingenieurbüro Sanitär & Heizung, München</div>
+            <div class="proof-role">Büroinhaber, Ingenieurbüro Sanitär &amp; Heizung, München</div>
           </div>
         </div>
       </div>
 
       <div class="proof-card reveal-up" style="transition-delay:.2s">
-        <div class="quote-mark">"</div>
+        <div class="quote-mark">“</div>
         <div class="proof-text">Der GAEB Konverter allein hat uns in den ersten vier Wochen locker 15 Stunden Tipparbeit gespart. Das Produkt wurde offensichtlich von jemandem gebaut, der weiß wie Planung wirklich läuft.</div>
         <div class="proof-author">
           <div class="proof-avatar">AR</div>
@@ -949,6 +956,17 @@ footer{
       <div class="trust-txt">Direkter Support vom Gründer</div>
     </div>
   </div>
+  <div class="trust-assoc">
+    <div class="trust-assoc-label">Normen &amp; Branchenstandards</div>
+    <div class="trust-assoc-logos">
+      <span class="assoc-badge">VDI Richtlinien</span>
+      <span class="assoc-badge">VDMA-Standards</span>
+      <span class="assoc-badge">DIN EN Normen</span>
+      <span class="assoc-badge">VOB/B 2016</span>
+      <span class="assoc-badge">HOAI 2021</span>
+      <span class="assoc-badge">GAEB DA 83/86</span>
+    </div>
+  </div>
 </div>
 
 <!-- ── PRICING ── -->
@@ -966,7 +984,7 @@ footer{
     <div class="pricing-grid">
       <div class="p-card reveal-up">
         <div class="p-tier">Starter</div>
-        <div class="p-name">Ausschreibung & Aufmaß</div>
+        <div class="p-name">Ausschreibung &amp; Aufmaß</div>
         <div class="p-desc">Für Solo-Planer und Kleinstbüros. Sofort produktiv.</div>
         <div class="p-price">
           <span class="p-cur">€</span>
@@ -978,7 +996,7 @@ footer{
         <hr class="p-divider">
         <ul class="p-list">
           <li><strong>GAEB Konverter</strong> — PDF → GAEB automatisch</li>
-          <li><strong>Aufmaß Pro</strong> — Digital & REB-konform</li>
+          <li><strong>Aufmaß Pro</strong> — Digital &amp; REB-konform</li>
           <li><strong>TGA-Abstimmungs-Tool</strong> — KI-Bemusterung</li>
         </ul>
         <div class="p-users">👤 1 Nutzer inklusive</div>
@@ -987,7 +1005,7 @@ footer{
       <div class="p-card featured reveal-up" style="transition-delay:.1s">
         <div class="rec-badge">⭐ Empfohlen</div>
         <div class="p-tier">Professional</div>
-        <div class="p-name">Prüfung & Qualität</div>
+        <div class="p-name">Prüfung &amp; Qualität</div>
         <div class="p-desc">Das Herzstück — VOB, LV-Qualität und die Starter-Tools.</div>
         <div class="p-price">
           <span class="p-cur">€</span>
@@ -1019,7 +1037,7 @@ footer{
         <hr class="p-divider">
         <ul class="p-list">
           <li>Alle 5 Professional-Tools</li>
-          <li><strong>HOAI-TGA-Manager</strong> — Honorar & Billing</li>
+          <li><strong>HOAI-TGA-Manager</strong> — Honorar &amp; Billing</li>
           <li><strong>Projekt Profi</strong> — HOAI LPH 1–9</li>
         </ul>
         <div class="p-users">👥 Bis 3 Nutzer · weitere +29 €/Nutzer</div>
@@ -1052,6 +1070,7 @@ footer{
 <footer>
   <div class="footer-logo">TGAassist</div>
   <div class="footer-links">
+    <a href="/ueber-uns">Über uns</a>
     <a href="/datenschutz">Datenschutz</a>
     <a href="/impressum">Impressum</a>
     <a href="/agb">AGB</a>
